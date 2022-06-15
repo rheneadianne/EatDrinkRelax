@@ -37,17 +37,6 @@ function genreToUserSelect() {
   });
 }
 
-// Find genre name and ID from the api
-async function genreListApi() {
-  let genres = await fetch(
-    "https://api.themoviedb.org/3/genre/movie/list?api_key=" +
-      movieApiKey +
-      "&language=en-US"
-  );
-  genres = await genres.json();
-  return genres;
-}
-
 // Function for getting the movies
 
 async function getMoviesList(movieGenre, movieYear, movieSort, moviePage = 1) {
@@ -73,7 +62,7 @@ function generateRandomMovie() {
   // First request to figure out how many options per page
   getMoviesList(movieGenre.value, movieYear.value, movieSorting.value).then(
     (value) => {
-      if (value.page == 1) {
+      if (value.moviePage == 1) {
         //Now we randomize it
         getMoviesList(
           movieGenre.value,
@@ -107,6 +96,18 @@ function generateRandomMovie() {
       }
     }
   );
+}
+
+// Find genre name and ID from the api
+async function genreListApi() {
+  let genres = await fetch(
+    "https://api.themoviedb.org/3/genre/movie/list?api_key=" +
+      movieApiKey +
+      "&language=en-US"
+  );
+  genres = await genres.json();
+  console.log("Checking genres", genres);
+  return genres;
 }
 
 function displayMovieInformation(
