@@ -73,7 +73,7 @@ function generateRandomMovie() {
   // First request to figure out how many options per page
   getMoviesList(movieGenre.value, movieYear.value, movieSorting.value).then(
     (value) => {
-      if (value.moviePage == 1) {
+      if (value.page == 1) {
         //Now we randomize it
         getMoviesList(
           movieGenre.value,
@@ -81,7 +81,7 @@ function generateRandomMovie() {
           movieSorting.value,
           Math.floor(
             Math.random() *
-              (value.totalFoundPages > 500 ? 500 : value.totalFoundPages)
+              (value.total_pages > 500 ? 500 : value.total_pages)
           ) + 1
         )
           .then((value) => {
@@ -110,6 +110,7 @@ function generateRandomMovie() {
 }
 
 function displayMovieInformation(
+  
   poster_link,
   title,
   // overview,
@@ -119,12 +120,13 @@ function displayMovieInformation(
   popularity,
   genres = []
 ) {
+  debugger;
   genreListApi().then((userGenre) => {
     userGenre = userGenre.genres;
     let chosenGenreName = "";
     //to check the genres name with genre id
     genres.forEach((element) => {
-      genresForCheck.forEach((genreID) => {
+      userGenre.forEach((genreID) => {
         if (element == genreID.id) chosenGenreName += `${genreID.name},  `;
       });
     });
@@ -133,7 +135,7 @@ function displayMovieInformation(
     <div class="chosenMovieInformation">
       <p class="text">
         <span
-          >title: </span
+          >Movie Title: </span
         >${title}
       </p>
     <div class="movieImageContainer">
@@ -147,12 +149,12 @@ function displayMovieInformation(
   </div>
     <p class="text">
     <span
-      >genres: </span
+      >Movie Genre: </span
     >${chosenGenreName}
   </p>
     <p class="text">
     <span
-      >popularity: </span
+      >Movie Popularity: </span
     >${popularity}
   </p>
   </div>
