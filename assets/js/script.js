@@ -52,17 +52,17 @@ async function genreListApi() {
 
 async function getMoviesList(movieGenre, movieYear, movieSort, moviePage = 1) {
   //disable the button
-  document.querySelector(".generate").disabled = true;
+  document.querySelector(".generateMovie").disabled = true;
   //add the chosen options into the api
-  let response = `https://api.themoviedb.org/3/discover/movie?movieSort_by=${movieSort}${
-    movieYear != "All" ? "&primary_release_movieYear=" + movieYear : ""
+  let response = `https://api.themoviedb.org/3/discover/movie?sort_by=${movieSort}${
+    movieYear != "All" ? "&primary_release_year=" + movieYear : ""
   }${
-    movieGenre != "All" ? "with_movieGenres=" + movieGenre : ""
-  }api_key="+ movieApiKey +"&page=${moviePage}`;
+    movieGenre != "All" ? "with_genres=" + movieGenre : ""
+  }api_key=2e23590ce3564e605ddd23163743fd00&page=${moviePage}`;
   let foundMovies = await fetch(response);
   foundMovies = await foundMovies.json();
   //return the button to on so that the user can generate another movie
-  document.querySelector(".generate").disabled = false;
+  document.querySelector(".generateMovie").disabled = false;
   return foundMovies;
 }
 
@@ -102,7 +102,7 @@ function generateRandomMovie() {
           })
           .catch((reason) => {
             console.log("error: " + reason);
-            document.querySelector(".generate").disabled = false;
+            document.querySelector(".generateMovie").disabled = false;
           });
       }
     }
@@ -112,10 +112,10 @@ function generateRandomMovie() {
 function displayMovieInformation(
   poster_link,
   title,
-  overview,
-  release_date,
-  language,
-  vote,
+  // overview,
+  // release_date,
+  // language,
+  // vote,
   popularity,
   genres = []
 ) {
@@ -128,12 +128,34 @@ function displayMovieInformation(
         if (element == genreID.id) chosenGenreName += `${genreID.name},  `;
       });
     });
-    console.log (chosenGenreName, title, release_date, language, vote, popularity, overview);
     //add information like movie name, photo, overview and etc
     document.querySelector(".movieInformation").innerHTML = `        
-        //   what in the hecky do we put here //
-      `;
+    <div class="chosenMovieInformation">
+      <p class="text">
+        <span
+          >title: </span
+        >${title}
+      </p>
+    <div class="movieImageContainer">
+    <img
+      src="${
+        poster_link ? "https://image.tmdb.org/t/p/original" + poster_link : ""
+      }"
+      class="movieImage"
+      alt="This is a poster of the currently chosen movie."
+    />
+  </div>
+    <p class="text">
+    <span
+      >genres: </span
+    >${chosenGenreName}
+  </p>
+    <p class="text">
+    <span
+      >popularity: </span
+    >${popularity}
+  </p>
+  </div>
+`;
   });
 }
-
-
