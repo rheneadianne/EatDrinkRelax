@@ -39,7 +39,7 @@ function genreToUserSelect() {
 
 // Function for getting the movies
 
-async function getMoviesList(movieGenre, movieYear, movieSort, moviePage = 1) {
+async function getMoviesList(movieGenre, movieYear, movieSort, page = 1) {
   //disable the button
   document.querySelector(".generateMovie").disabled = true;
   //add the chosen options into the api
@@ -47,11 +47,12 @@ async function getMoviesList(movieGenre, movieYear, movieSort, moviePage = 1) {
     movieYear != "All" ? "&primary_release_year=" + movieYear : ""
   }${
     movieGenre != "All" ? "with_genres=" + movieGenre : ""
-  }api_key=2e23590ce3564e605ddd23163743fd00&page=${moviePage}`;
+  }api_key=2e23590ce3564e605ddd23163743fd00&page=${page}`;
   let foundMovies = await fetch(response);
   foundMovies = await foundMovies.json();
   //return the button to on so that the user can generate another movie
   document.querySelector(".generateMovie").disabled = false;
+  console.log("Checking found movies", foundMovies);
   return foundMovies;
 }
 
@@ -62,15 +63,14 @@ function generateRandomMovie() {
   // First request to figure out how many options per page
   getMoviesList(movieGenre.value, movieYear.value, movieSorting.value).then(
     (value) => {
-      if (value.moviePage == 1) {
+      if (value.page == 1) {
         //Now we randomize it
         getMoviesList(
           movieGenre.value,
           movieYear.value,
           movieSorting.value,
           Math.floor(
-            Math.random() *
-              (value.total_pages > 500 ? 500 : value.total_pages)
+            Math.random() * (value.total_pages > 500 ? 500 : value.total_pages)
           ) + 1
         )
           .then((value) => {
@@ -81,11 +81,15 @@ function generateRandomMovie() {
             displayMovieInformation(
               value.results[randomMovieIndex].poster_path,
               value.results[randomMovieIndex].title,
-              value.results[randomMovieIndex].overview,
+              // value.results[randomMovieIndex].overview,
               value.results[randomMovieIndex].release_date,
-              value.results[randomMovieIndex].original_language,
-              value.results[randomMovieIndex].vote_average,
+              // value.results[randomMovieIndex].original_language,
+              // value.results[randomMovieIndex].vote_average,
               value.results[randomMovieIndex].popularity,
+              value.results[randomMovieIndex].genre_ids
+            );
+            console.log(
+              "Check Genres on line 91:",
               value.results[randomMovieIndex].genre_ids
             );
           })
@@ -106,26 +110,25 @@ async function genreListApi() {
       "&language=en-US"
   );
   genres = await genres.json();
-  console.log("Checking genres", genres);
+  console.log("Check Genres on line 110:", genres);
   return genres;
 }
 
 function displayMovieInformation(
-  
   poster_link,
   title,
   // overview,
-  // release_date,
+  release_date,
   // language,
   // vote,
   popularity,
   genres = []
 ) {
+  console.log("Check Genres on line 123:", genres);
   genreListApi().then((userGenre) => {
     userGenre = userGenre.genres;
     let chosenGenreName = "";
     //to check the genres name with genre id
-    console.log ("Checking genres", genres);
     genres.forEach((element) => {
       userGenre.forEach((genreID) => {
         if (element == genreID.id) chosenGenreName += `${genreID.name},  `;
@@ -157,6 +160,11 @@ function displayMovieInformation(
     <span
       >Movie Popularity: </span
     >${popularity}
+  </p>
+  <p class="text">
+    <span
+      >Release Date: </span
+    >${release_date}
   </p>
   </div>
 `;
