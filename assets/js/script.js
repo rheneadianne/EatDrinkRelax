@@ -121,11 +121,11 @@ function displayMovieInformation(
   popularity,
   genres = []
 ) {
-  debugger;
   genreListApi().then((userGenre) => {
     userGenre = userGenre.genres;
     let chosenGenreName = "";
     //to check the genres name with genre id
+    console.log ("Checking genres", genres);
     genres.forEach((element) => {
       userGenre.forEach((genreID) => {
         if (element == genreID.id) chosenGenreName += `${genreID.name},  `;
