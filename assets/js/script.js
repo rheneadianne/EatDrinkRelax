@@ -137,11 +137,11 @@ function displayMovieInformation(
     //add information like movie name, photo, overview and etc
     document.querySelector(".movieInformation").innerHTML = `        
     <div class="chosenMovieInformation">
-      <p class="text">
+      <a href="./movieInfo.html" target="_blank class="text">
         <span
           >Movie Title: </span
         >${title}
-      </p>
+      </a>
     <div class="movieImageContainer">
     <img
       src="${

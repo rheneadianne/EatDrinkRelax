@@ -1,5 +1,10 @@
+.chosenMovieInformation a {
+  text-decoration: none;
+  color: black;
+}
+
 .movieImage {
-    width:280px;
-    height:460px;
-    border-radius: 15px;
+  width: 280px;
+  height: 460px;
+  border-radius: 15px;
 }
