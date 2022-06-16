@@ -6,6 +6,7 @@ const movieSorting = document.querySelector(".sortOption");
 const movieApiKey = "2e23590ce3564e605ddd23163743fd00";
 
 // Call to add the year and genre to the options for user select
+
 yearsToUserSelect();
 genreToUserSelect();
 
@@ -113,6 +114,7 @@ async function genreListApi() {
   console.log("Check Genres on line 110:", genres);
   return genres;
 }
+
 
 function displayMovieInformation(
   poster_link,
