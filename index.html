@@ -5,73 +5,102 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
     <title>Eat Drink Relax</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <script src="https://kit.fontawesome.com/7f23a2002a.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
 
     <!-- Header / Jumbotron -->
-    <h1>EAT</h1>
-    <h1>DRINK</h1>
-    <h1>RELAX</h1>
+    <section class="hero is-primary">
+        <div class="hero-body">
+            <div class="container columns has-text-primary">
+                <h1 class="column title is-2">EAT</h1>
+                <h1 class="column title is-2">DRINK</h1>
+                <h1 class="column title is-2">RELAX</h1>
+            </div>
+        </div>
+    </section>
 
     <!-- Nav bar? Holds the randomize all button, and the favorites button (bring to new page) -->
-    <nav>
-        <ul>
-            <li>
+    <section class="nav">
+        <ul class="columns">
+            <li class="column">
                 <!-- Randomize Button -->
                 <a>Randomize All</a>
             </li>
-            <li>
+            <li class="column">
                 <!-- Favourites Link -->
                 <a>Favourites</a>
             </li>
         </ul>
-    </nav>
+    </section>
 
-    <div>
+    <div class="columns">
         <!-- Eat card - Holds the name of the food, image and a randomize button. -->
-        <article class="card">
+        <article class="card column">
             <div class="card-content">
-                <h2 class="card-title">Eat</h2>
-                <h3 class="image-name">Pad Thai</h3>
+                <h2 class="title is-3">Eat</h2>
+                <h3 class="subtitle is-4">Pad Thai</h3>
                 <img src="https://www.halfbakedharvest.com/wp-content/uploads/2020/02/Better-Than-Takeout-Garlic-Butter-Shrimp-Pad-Thai-1.jpg"
                     alt="Meal" />
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi neque animi quo cupiditate commodi
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi neque animi
+                    quo cupiditate commodi
                     saepe
-                    culpa sed itaque velit maiores optio dolorem excepturi aperiam dolores, voluptatibus suscipit amet
+                    culpa sed itaque velit maiores optio dolorem excepturi aperiam dolores, voluptatibus suscipit
+                    amet
                     quis
                     repellat!</p>
-                <button type="submit">Randomize</button>
+                <footer class="card-footer">
+                    <div class="card-footer-item">
+                        <a href="#" class="button is-link">Randomize</a>
+                    </div>
+
+                </footer>
             </div>
         </article>
         <!-- Drink card - Holds the name of the drink, image and a randomize button. -->
-        <article class="card">
+        <article class="card column">
             <div class="card-content">
-                <h2 class="card-title">Drink</h2>
-                <h3 class="image-name">Old Fashioned</h3>
+                <h2 class="title is-3">Drink</h2>
+                <h3 class="subtitle is-4">Old Fashioned</h3>
                 <img src="https://images.immediate.co.uk/production/volatile/sites/2/2020/02/Cocktail-3-bb1c21e.jpg?quality=90&webp=true&crop=242px,317px,1907px,820px&resize=600,545"
                     alt="Cocktail" />
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi neque animi quo cupiditate commodi
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi neque animi
+                    quo cupiditate commodi
                     saepe
-                    culpa sed itaque velit maiores optio dolorem excepturi aperiam dolores, voluptatibus suscipit amet
+                    culpa sed itaque velit maiores optio dolorem excepturi aperiam dolores, voluptatibus suscipit
+                    amet
                     quis
                     repellat!</p>
-                    <button type="submit">Randomize</button>
+                <footer class="card-footer">
+                    <div class="card-footer-item">
+                        <a href="#" class="button is-link">Randomize</a>
+                    </div>
+                </footer>
+
             </div>
         </article>
-        <article class="card">
+        <article class="card column">
             <div class="card-content">
-                <h2 class="card-title">Relax</h2>
-                <h3 class="image-name">The Goonies</h3>
+                <h2 class="title is-3">Relax</h2>
+                <h3 class="subtitle is-4">The Goonies</h3>
                 <img src="https://asmoothsea.com/covers/the-goonies.jpg" alt="Movie Poster" />
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi neque animi quo cupiditate commodi
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi neque animi
+                    quo cupiditate commodi
                     saepe
-                    culpa sed itaque velit maiores optio dolorem excepturi aperiam dolores, voluptatibus suscipit amet
+                    culpa sed itaque velit maiores optio dolorem excepturi aperiam dolores, voluptatibus suscipit
+                    amet
                     quis
                     repellat!</p>
-                    <button type="submit">Randomize</button>
+                <footer class="card-footer">
+
+                    <div class="card-footer-item">
+                        <a href="#" class="button is-link">Randomize</a>
+                    </div>
+                </footer>
             </div>
         </article>
 
