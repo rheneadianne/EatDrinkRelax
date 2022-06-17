@@ -4,6 +4,7 @@ const movieGenre = document.querySelector(".genreOption");
 const movieYear = document.querySelector(".yearOption");
 const movieSorting = document.querySelector(".sortOption");
 const movieApiKey = "2e23590ce3564e605ddd23163743fd00";
+var movieId = "";
 
 // Call to add the year and genre to the options for user select
 
@@ -64,6 +65,7 @@ function generateRandomMovie() {
   // First request to figure out how many options per page
   getMoviesList(movieGenre.value, movieYear.value, movieSorting.value).then(
     (value) => {
+      console.log("Checking value", value);
       if (value.page == 1) {
         //Now we randomize it
         getMoviesList(
@@ -87,12 +89,29 @@ function generateRandomMovie() {
               // value.results[randomMovieIndex].original_language,
               // value.results[randomMovieIndex].vote_average,
               value.results[randomMovieIndex].popularity,
-              value.results[randomMovieIndex].genre_ids
+              value.results[randomMovieIndex].genre_ids,
+              value.results[randomMovieIndex].id
             );
-            console.log(
-              "Check Genres on line 91:",
-              value.results[randomMovieIndex].genre_ids
-            );
+            // Get the IMDB id of the chosen movie so that we can link to it.
+            movieId = value.results[randomMovieIndex].id;
+            fetch(
+              "https://api.themoviedb.org/3/movie/" +
+                movieId +
+                "/external_ids?api_key=" +
+                movieApiKey +
+                ""
+            )
+              .then((response) => {
+                if (response.ok) {
+                  return response.json();
+                } else {
+                  throw new Error("Network Error");
+                }
+              })
+              .then((data) => {
+                chosenID = data.imdb_id;
+                console.log ("Check chosen ID", chosenID);
+              });
           })
           .catch((reason) => {
             console.log("error: " + reason);
@@ -103,6 +122,7 @@ function generateRandomMovie() {
   );
 }
 
+
 // Find genre name and ID from the api
 async function genreListApi() {
   let genres = await fetch(
@@ -111,10 +131,9 @@ async function genreListApi() {
       "&language=en-US"
   );
   genres = await genres.json();
-  console.log("Check Genres on line 110:", genres);
+  console.log("Check Genres", genres);
   return genres;
 }
-
 
 function displayMovieInformation(
   poster_link,
@@ -126,7 +145,7 @@ function displayMovieInformation(
   popularity,
   genres = []
 ) {
-  console.log("Check Genres on line 123:", genres);
+  console.log("Check Genres", genres);
   genreListApi().then((userGenre) => {
     userGenre = userGenre.genres;
     let chosenGenreName = "";
@@ -139,7 +158,7 @@ function displayMovieInformation(
     //add information like movie name, photo, overview and etc
     document.querySelector(".movieInformation").innerHTML = `        
     <div class="chosenMovieInformation">
-      <a href="./movieInfo.html" target="_blank class="text">
+      <a href="https://www.imdb.com/title/" target=_blank class="text">
         <span
           >Movie Title: </span
         >${title}
