@@ -4,7 +4,8 @@ const movieGenre = document.querySelector(".genreOption");
 const movieYear = document.querySelector(".yearOption");
 const movieSorting = document.querySelector(".sortOption");
 const movieApiKey = "2e23590ce3564e605ddd23163743fd00";
-var movieId = "";
+
+
 
 // Call to add the year and genre to the options for user select
 
@@ -90,7 +91,6 @@ function generateRandomMovie() {
               // value.results[randomMovieIndex].vote_average,
               value.results[randomMovieIndex].popularity,
               value.results[randomMovieIndex].genre_ids,
-              value.results[randomMovieIndex].id
             );
             // Get the IMDB id of the chosen movie so that we can link to it.
             movieId = value.results[randomMovieIndex].id;
@@ -109,7 +109,7 @@ function generateRandomMovie() {
                 }
               })
               .then((data) => {
-                chosenID = data.imdb_id;
+                var chosenID = data.imdb_id;
                 console.log ("Check chosen ID", chosenID);
               });
           })
