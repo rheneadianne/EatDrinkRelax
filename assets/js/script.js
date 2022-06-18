@@ -59,8 +59,8 @@ async function getMoviesList(movieGenre, movieYear, movieSort, page = 1) {
   return foundMovies;
 }
 
-//Function for generating the random movie
 
+//Function for generating the random movie
 function generateRandomMovie() {
   let randomMovieIndex;
   // First request to figure out how many options per page
@@ -191,3 +191,5 @@ function displayMovieInformation(
 `;
   });
 }
+
+import { mealsToLocal } from "./favorites";
