@@ -1,0 +1,1 @@
+import { mealsToLocal } from "./favorites";
