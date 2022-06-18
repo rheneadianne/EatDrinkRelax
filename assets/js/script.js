@@ -59,7 +59,6 @@ async function getMoviesList(movieGenre, movieYear, movieSort, page = 1) {
   return foundMovies;
 }
 
-
 //Function for generating the random movie
 function generateRandomMovie() {
   let randomMovieIndex;
@@ -192,4 +191,5 @@ function displayMovieInformation(
   });
 }
 
-import { mealsToLocal } from "./favorites";
+//commented out as it broke things from working for now. 
+// import { mealsToLocal } from "./favorites";
