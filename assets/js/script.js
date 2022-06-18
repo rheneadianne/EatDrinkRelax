@@ -5,7 +5,7 @@ const movieYear = document.querySelector(".yearOption");
 const movieSorting = document.querySelector(".sortOption");
 const movieApiKey = "2e23590ce3564e605ddd23163743fd00";
 
-
+var imdbID = "";
 
 // Call to add the year and genre to the options for user select
 
@@ -81,17 +81,7 @@ function generateRandomMovie() {
             //Choose a random movie in the array
             randomMovieIndex =
               Math.floor(Math.random() * value.results.length - 1) + 1;
-            //send all the information to another function that will then display the information
-            displayMovieInformation(
-              value.results[randomMovieIndex].poster_path,
-              value.results[randomMovieIndex].title,
-              // value.results[randomMovieIndex].overview,
-              value.results[randomMovieIndex].release_date,
-              // value.results[randomMovieIndex].original_language,
-              // value.results[randomMovieIndex].vote_average,
-              value.results[randomMovieIndex].popularity,
-              value.results[randomMovieIndex].genre_ids,
-            );
+
             // Get the IMDB id of the chosen movie so that we can link to it.
             movieId = value.results[randomMovieIndex].id;
             fetch(
@@ -109,8 +99,18 @@ function generateRandomMovie() {
                 }
               })
               .then((data) => {
-                var chosenID = data.imdb_id;
-                console.log ("Check chosen ID", chosenID);
+                imdbID = data.imdb_id;
+                //send all the information to another function that will then display the information
+                displayMovieInformation(
+                  value.results[randomMovieIndex].poster_path,
+                  value.results[randomMovieIndex].title,
+                  // value.results[randomMovieIndex].overview,
+                  value.results[randomMovieIndex].release_date,
+                  // value.results[randomMovieIndex].original_language,
+                  // value.results[randomMovieIndex].vote_average,
+                  value.results[randomMovieIndex].popularity,
+                  value.results[randomMovieIndex].genre_ids
+                );
               });
           })
           .catch((reason) => {
@@ -121,7 +121,6 @@ function generateRandomMovie() {
     }
   );
 }
-
 
 // Find genre name and ID from the api
 async function genreListApi() {
@@ -156,9 +155,10 @@ function displayMovieInformation(
       });
     });
     //add information like movie name, photo, overview and etc
+    console.log(JSON.stringify(localStorage.getItem("imdb_id")));
     document.querySelector(".movieInformation").innerHTML = `        
     <div class="chosenMovieInformation">
-      <a href="https://www.imdb.com/title/" target=_blank class="text">
+      <a href="https://www.imdb.com/title/${imdbID}" target=_blank class="text">
         <span
           >Movie Title: </span
         >${title}
