@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Eat Drink Relax</title>
-</head>
-<body>
-
+  </head>
+  <body>
     <!-- Header / Jumbotron -->
 
     <!-- Nav bar? Holds the randomize all button, and the favorites button (bring to new page) -->
@@ -19,8 +18,38 @@
 
     <!-- Movie card? Holds the name of the movie, image and a randomize button. -->
 
+    <div class="container">
+      <div class="movieInformation"></div>
+      <div class="movieOptions">
+        <div class="option">
+          <p>GENRE:</p>
+          <select class="genreOption">
+            <option value="All">All</option>
+          </select>
+        </div>
+        <div class="option">
+          <p>YEAR:</p>
+          <select class="yearOption">
+            <option value="All">All</option>
+          </select>
+        </div>
+        <div class="option">
+          <p>SORT:</p>
+          <select class="sortOption">
+            <option value="popularity.desc&">Most Popular</option>
+            <option value="popularity.asc&">Least Popular</option>
+            <option value="primary_release_date.desc&">Latest</option>
+            <option value="primary_release_date.asc&">Oldest</option>
+            <option value="vote_average.desc&">Top Rated</option>
+            <option value="vote_average.asc&">Least Rated</option>
+          </select>
+        </div>
+        <button class="generateMovie">Randomize Movie</button>
+      </div>
+    </div>
+
     <!-- Footer? Do we want a footer? Or just leave it blank? -->
 
     <script src="./assets/js/script.js"></script>
-</body>
+  </body>
 </html>
