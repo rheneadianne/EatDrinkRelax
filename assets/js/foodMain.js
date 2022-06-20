@@ -26,7 +26,7 @@ const changeIntolerance = intolerances => {
     foodAPI = `${foodAPI}${spoonParams.recipeType},${spoonParams.diet},${spoonParams.intolerances}`
 }
 
-$(".randomize").click(function () {
+const randomFoodAPI = () => {
     $(".foodError").addClass("is-hidden")
     $(".moreInfobtn").removeClass("is-hidden")
     fetch(foodAPI + foodAPIkey, {
@@ -42,6 +42,10 @@ $(".randomize").click(function () {
             })
         })
         .catch(() => errorMessage())
+}
+
+$(".randomize").click(function () {
+    randomFoodAPI()
 })
 
 const currentMenuStored = JSON.parse(localStorage.getItem("currentMenu"))
