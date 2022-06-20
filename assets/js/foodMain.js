@@ -1,6 +1,8 @@
 const foodAPIkey = "&apiKey=84d33c0efd234661bf41e9848364e177"
 const foodTitle = document.querySelector(".foodTitle")
 const foodImg = document.querySelector(".foodImg")
+const errorPopUp = document.querySelector(".foodError")
+
 let spoonParams = {
     recipeType: "main%20course",
     diet: "",
@@ -11,20 +13,22 @@ let foodAPI = `https://api.spoonacular.com/recipes/random?tags=`
 
 const changeMealType = recipeType => {
     spoonParams.recipeType = recipeType
-    foodAPI = `https://api.spoonacular.com/recipes/random?tags=${spoonParams.recipeType},${spoonParams.diet},${spoonParams.intolerances}`
+    foodAPI = `${foodAPI}${spoonParams.recipeType},${spoonParams.diet},${spoonParams.intolerances}`
 }
 
 const changeDiet = diet => {
     spoonParams.diet = diet
-    foodAPI = `https://api.spoonacular.com/recipes/random?tags=${spoonParams.recipeType},${spoonParams.diet},${spoonParams.intolerances}`
+    foodAPI = `${foodAPI}${spoonParams.recipeType},${spoonParams.diet},${spoonParams.intolerances}`
 }
 
 const changeIntolerance = intolerances => {
     spoonParams.intolerances = intolerances
-    foodAPI = `https://api.spoonacular.com/recipes/random?tags=${spoonParams.recipeType},${spoonParams.diet},${spoonParams.intolerances}`
+    foodAPI = `${foodAPI}${spoonParams.recipeType},${spoonParams.diet},${spoonParams.intolerances}`
 }
 
-$(".killme").click(function () {
+$(".randomize").click(function () {
+    $(".foodError").addClass("is-hidden")
+    $(".moreInfobtn").removeClass("is-hidden")
     fetch(foodAPI + foodAPIkey, {
         method: "GET",
         headers: { "Content-type": "application/json" }
@@ -37,17 +41,21 @@ $(".killme").click(function () {
                 saveForMoreDetails(currentRandomRecipe)
             })
         })
-        .catch(() => document.getElementById("demo").innerHTML = "Invalid Combo! Please try again")
+        .catch(() => errorMessage())
 })
 
 const currentMenuStored = JSON.parse(localStorage.getItem("currentMenu"))
 
 const randomFood = data => {
-    foodImg.src = data.recipes[0].image
+    foodImg.src = `https://spoonacular.com/recipeImages/${data.recipes[0].id}-556x370.jpg`
     foodTitle.innerHTML = data.recipes[0].title
-
 }
 
 const saveForMoreDetails = currentRandomRecipe => {
     localStorage.setItem("currentMenu", JSON.stringify(currentRandomRecipe))
+}
+
+const errorMessage = () => {
+    $(".foodError").removeClass("is-hidden")
+    errorPopUp.innerHTML = "Invalid selections! Please note that the API has a limited tagging system. Please try a different combo!"
 }

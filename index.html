@@ -11,10 +11,10 @@
 </head>
 
 <body>
-    <div id ="demo"></div>
+    <div class ="foodError"></div>
     <section class="columns">
         <article class="food column section has-background-link-light is-flex is-flex-direction-column m-6">
-            <h1 class="foodTitle has-text-centered m-2 p-2 has-text-link-light has-text-info-dark">Click below for a
+            <h1 class="title is-4 foodTitle has-text-centered mb-2 has-text-link-light has-text-info-dark">Click below for a
                 random recipe!</h1>
             <div class="select is-fullwidth mb-2">
                 <select class="changeRecipeType" onchange="changeMealType(this.options[this.selectedIndex].value)">
@@ -61,9 +61,9 @@
                     <option value="wheat">Wheat</option>
                 </select>
             </div>
-            <button type="button" class="killme button is-info is-fullwidth mb-2">Choose</button>
-            <img src="" class="foodImg mb-2" />
-            <a href="./singlepage.html" target="_blank" class="moreInfobtn button is-danger">Learn More</a>
+            <button type="button" class="randomize button is-info is-fullwidth mb-2">Randomize</button>
+            <a href="./singlepage.html" target="_blank" class="is-hidden moreInfobtn button is-danger mb-2">Learn More</a>
+            <img src="" class="foodImg" />
         </article>
         <article class="column">
             <div id="cocktailDiv"></div>
@@ -78,7 +78,7 @@
         </article>
     </section>
 
-    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/foodMain.js"></script>
 </body>
 
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,14 +9,27 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <title class="pageTitle">More Information</title>
 </head>
+
 <body>
-    <h1 class="singlePageTitle"></h1>
-    <p class="foodDesc"></p>
-    <div class="foodStepsContain">
-        <ul class="foodSteps"></ul>
-    </div>
-    <img src="" class="foodNutrition"/>
-    <button type="button" class="close">close</button>
-<script src="./assets/js/foodPage.js"></script>
+    <section class="moreInfo content is-flex is-flex-direction-column m-6">
+        <div class="columns">
+            <div class="column">
+                <h1 class="column singlePageTitle title m-0"></h1>
+                <button type="button" class="close button is-warning">Close Page</button>
+            </div>
+        </div>
+        <div class="columns">
+            <div class="foodStepsContain column is-two-thirds">
+                <ol class="foodSteps">
+                    </ul>
+            </div>
+            <div class="column is-flex is-flex-direction-column m-6">
+                <img src="" class="currentFoodImg" />
+                <img src="" class="foodNutrition" />
+            </div>
+        </div>
+    </section>
+    <script src="./assets/js/foodPage.js"></script>
 </body>
+
 </html>
