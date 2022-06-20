@@ -123,5 +123,3 @@ function displayAllFav () {
     }
     mealList.appendChild(unorderedMealList);
 }
-
-displayAllFav();
