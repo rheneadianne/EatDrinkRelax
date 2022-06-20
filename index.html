@@ -2,21 +2,24 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Eat Drink Relax</title>
 </head>
 
 <body>
-    <div class ="foodError has-background-danger box has-text-white is-hidden"></div>
+    <!-- Header / Jumbotron -->
+
+    <!-- Nav bar? Holds the randomize all button, and the favorites button (bring to new page) -->
+
+    <div class="foodError has-background-danger box has-text-white is-hidden"></div>
     <section class="columns">
         <article class="food column section has-background-link-light is-flex is-flex-direction-column m-6">
-            <h1 class="title is-4 foodTitle has-text-centered mb-2 has-text-link-light has-text-info-dark">Click below for a
-                random recipe!</h1>
+            <h1 class="title is-4 foodTitle has-text-centered mb-2 has-text-link-light has-text-info-dark">Click below for a random recipe!</h1>
             <div class="select is-fullwidth mb-2">
                 <select class="changeRecipeType" onchange="changeMealType(this.options[this.selectedIndex].value)">
                     <option value="main%20course">Main Course</option>
@@ -63,23 +66,56 @@
                 </select>
             </div>
             <button type="button" class="randomize button is-info is-fullwidth mb-2">Randomize</button>
-            <a href="./singlepage.html" target="_blank" class="is-hidden moreInfobtn button is-danger mb-2">Learn More</a>
+            <a href="./singlepage.html" target="_blank" class="is-hidden moreInfobtn button is-danger mb-2">Learn
+                More</a>
             <img src="" class="foodImg" />
         </article>
-        <article class="column">
-            <div id="cocktailDiv"></div>
-            <div id="cocktail"></div>
 
-            <div id="overlay"></div>
-        </article>
+        <!-- Drink card? Holds the name of the drink, image and a randomize button. -->
+
+        <!-- Movie card? Holds the name of the movie, image and a randomize button. -->
         <article class="column">
-            <div id="cocktailDiv"></div>
-            <div id="cocktail"></div>
-            <div id="overlay"></div>
+        <div id="cocktailDiv"></div>
+        <div id="cocktail"></div>
+        <div id="overlay"></div>
+        </article>
+
+        <article class="container column">
+            <div class="movieInformation"></div>
+            <div class="movieOptions">
+                <div class="option">
+                    <p>GENRE:</p>
+                    <select class="genreOption">
+                        <option value="All">All</option>
+                    </select>
+                </div>
+                <div class="option">
+                    <p>YEAR:</p>
+                    <select class="yearOption">
+                        <option value="All">All</option>
+                    </select>
+                </div>
+                <div class="option">
+                    <p>SORT:</p>
+                    <select class="sortOption">
+                        <option value="popularity.desc&">Most Popular</option>
+                        <option value="popularity.asc&">Least Popular</option>
+                        <option value="primary_release_date.desc&">Latest</option>
+                        <option value="primary_release_date.asc&">Oldest</option>
+                        <option value="vote_average.desc&">Top Rated</option>
+                        <option value="vote_average.asc&">Least Rated</option>
+                    </select>
+                </div>
+                <button class="generateMovie">Randomize Movie</button>
+            </div>
         </article>
     </section>
+    <!-- Footer? Do we want a footer? Or just leave it blank? -->
 
-    <script src="./assets/js/foodMain.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/favorites.js"></script>
+    <script src="drink.js"></script>
+    <script async src="./assets/js/foodMain.js"></script>
 </body>
 
 </html>

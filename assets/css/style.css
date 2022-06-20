@@ -14,3 +14,14 @@
     text-align: center;
     top:4vh
 }
+
+.chosenMovieInformation a {
+  text-decoration: none;
+  color: black;
+}
+
+.movieImage {
+  width: 280px;
+  height: 460px;
+  border-radius: 15px;
+}
