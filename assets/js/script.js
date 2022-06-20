@@ -159,6 +159,7 @@ function displayMovieInformation(
           >Movie Title: </span
         >${title}
       </a>
+      <button = onClick=
     <div class="movieImageContainer">
     <img
       src="${poster_link ? "https://image.tmdb.org/t/p/original" + poster_link : ""
