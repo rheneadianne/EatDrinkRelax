@@ -42,7 +42,7 @@ fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php")
             return ingredients;
         }, {});
 
-        
+
         for (let key in getIngredients) {
             let value = getIngredients[key];
             listItem = document.createElement("li");
@@ -51,3 +51,27 @@ fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php")
         }
 
   }
+
+  
+
+
+const button = document.querySelector("#button")
+button.addEventListener("click", getDrinkInfo)
+
+
+
+
+function replaceDrinkImg() {
+  const removecocktail = document.querySelector("#cocktail")
+  while (removecocktail.lastChild) {
+    removecocktail.removeChild(removecocktail.lastChild)
+  }
+}
+
+function replaceDrinkInfo() {
+  const removeoverlay = document.querySelector("#overlay")
+  while (removeoverlay.lastChild) {
+    removeoverlay.removeChild(removeoverlay.lastChild)
+  }
+}
+

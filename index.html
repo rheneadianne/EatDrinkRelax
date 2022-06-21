@@ -27,7 +27,6 @@
   <!-- Nav bar? Holds the randomize all button, and the favorites button (bring to new page) -->
   <section class="columns m-4">
     <div class="foodError has-background-danger box has-text-white is-hidden"></div>
-
     <article class="food card column has-background-primary has-text-white m-5">
       <div class="card-content">
         <h1 class="title is-4 foodTitle has-text-centered mb-2 has-text-link-light has-text-info-dark">Click below for a
@@ -78,18 +77,19 @@
           </select>
         </div>
         <button type="button" class="randomize button is-info is-fullwidth mb-2">Randomize</button>
-        <a href="./singlepage.html" target="_blank" class="is-hidden moreInfobtn button is-danger mb-2">Learn
+        <a href="./singlepage.html" target="_blank" class="is-hidden moreInfobtn is-fullwidth button is-danger mb-2">Learn
           More</a>
         <img src="" class="foodImg" />
-      </div>
     </article>
 
-    <!-- Drink card? Holds the name of the drink, image and a randomize button. -->
-    <!-- Eat card? Holds the name of the food, image and a randomize button. -->
 
     <!-- Drink card? Holds the name of the drink, image and a randomize button. -->
-    <article class="card column has-background-primary has-text-white m-5">
+    <article class="column card has-background-primary has-text-white m-5">
       <div class="card-content">
+        <h1>Random Cocktail Generator</h1>
+        <h3>Tired of the same glass of wine or bottle of beer at your virtual happy hour? Click the button below
+          for a new cocktail recipe!</h3>
+        <button id="button">NEW COCKTAIL RECIPE</button>
         <div id="cocktailDiv"></div>
         <div id="cocktail"></div>
         <div id="overlay"></div>
@@ -101,36 +101,38 @@
 
     <article class="column container card has-background-primary has-text-white m-5">
       <div class="card-content">
-        <h1 class="title is-4 foodTitle has-text-centered mb-2 has-text-link-light has-text-info-dark">Click below for a
+        <h1 class="title is-4 foodTitle has-text-centered mb-2 has-text-link-light has-text-info-dark">Click below
+          for a
           random movie!</h1>
-      <div class="movieInformation"></div>
-      <div class="movieOptions">
-        <div class="option select is-fullwidth mb-2">
-          <!-- <p>GENRE:</p> -->
-          <select class="genreOption">
-            <option value="All">All Genres</option>
-          </select>
+        <div class="movieInformation"></div>
+        <div class="movieOptions">
+          <div class="option select is-fullwidth mb-2">
+            <!-- <p>GENRE:</p> -->
+            <select class="genreOption">
+              <option value="All">All Genres</option>
+            </select>
+          </div>
+          <div class="option select is-fullwidth mb-2">
+            <!-- <p>YEAR:</p> -->
+            <select class="yearOption">
+              <option value="All">All Years</option>
+            </select>
+          </div>
+          <div class="option select is-fullwidth mb-2">
+            <!-- <p>SORT:</p> -->
+            <select class="sortOption">
+              <option value="popularity.desc&">Most Popular</option>
+              <option value="popularity.asc&">Least Popular</option>
+              <option value="primary_release_date.desc&">Latest</option>
+              <option value="primary_release_date.asc&">Oldest</option>
+              <option value="vote_average.desc&">Top Rated</option>
+              <option value="vote_average.asc&">Least Rated</option>
+            </select>
+          </div>
+          <button type="button" class="button is-info is-fullwidth mb-2 generateMovie">Randomize
+            Movie</button>
         </div>
-        <div class="option select is-fullwidth mb-2">
-          <!-- <p>YEAR:</p> -->
-          <select class="yearOption">
-            <option value="All">All Years</option>
-          </select>
-        </div>
-        <div class="option select is-fullwidth mb-2">
-          <!-- <p>SORT:</p> -->
-          <select class="sortOption">
-            <option value="popularity.desc&">Most Popular</option>
-            <option value="popularity.asc&">Least Popular</option>
-            <option value="primary_release_date.desc&">Latest</option>
-            <option value="primary_release_date.asc&">Oldest</option>
-            <option value="vote_average.desc&">Top Rated</option>
-            <option value="vote_average.asc&">Least Rated</option>
-          </select>
-        </div>
-        <button type="button" class="randomize button is-info is-fullwidth mb-2" class="generateMovie">Randomize Movie</button>
       </div>
-    </div>
     </article>
 
     <!-- Footer? Do we want a footer? Or just leave it blank? -->
