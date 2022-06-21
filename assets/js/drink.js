@@ -42,7 +42,7 @@ fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php")
             return ingredients;
         }, {});
 
-        
+
         for (let key in getIngredients) {
             let value = getIngredients[key];
             listItem = document.createElement("li");
@@ -51,3 +51,5 @@ fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php")
         }
 
   }
+
+  
