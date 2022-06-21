@@ -159,6 +159,7 @@ function displayMovieInformation(
           >Movie Title: </span
         >${title}
       </a>
+      <button onclick= "favToLocal('Movie', '${title}', 'https://www.imdb.com/title/${imdbID}')"> Im your favorite! </button>
     <div class="movieImageContainer">
     <img
       src="${poster_link ? "https://image.tmdb.org/t/p/original" + poster_link : ""
