@@ -156,7 +156,7 @@ function displayMovieInformation(
         ${title}
       </a>`
         document.querySelector(".movieInformation").innerHTML = `
-        <button onclick= "favToLocal('Movie', '${title}', 'https://www.imdb.com/title/${imdbID}')" class="button is-fullwidth has-background-warning mb-2"> Im your favorite! </button>        
+        <button onclick= "favToLocal('Movie', '${title}', 'https://www.imdb.com/title/${imdbID}')" class="button is-fullwidth has-background-warning mb-2"> I'm your favorite! </button>        
     <div class="chosenMovieInformation columns is-flex is-flex-direction-row is-flex-wrap-wrap is-justify-content-space-evenly">
     <div class="movieImageContainer column is-6">
     <img
