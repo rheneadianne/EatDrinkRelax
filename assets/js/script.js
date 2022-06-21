@@ -154,12 +154,12 @@ function displayMovieInformation(
         console.log(JSON.stringify(localStorage.getItem("imdb_id")));
         document.querySelector(".movieTitle").innerHTML= `<a href="https://www.imdb.com/title/${imdbID}" target=_blank class="text">
         <span
-          >Movie Title: </span
+          ></span
         >${title}
       </a>`
         document.querySelector(".movieInformation").innerHTML = `        
     <div class="chosenMovieInformation">
-      <button onclick= "favToLocal('Movie', '${title}', 'https://www.imdb.com/title/${imdbID}')"> Im your favorite! </button>
+      <button onclick= "favToLocal('Movie', '${title}', 'https://www.imdb.com/title/${imdbID}')"> Favorite! </button>
     <div class="movieImageContainer">
     <img
       src="${poster_link ? "https://image.tmdb.org/t/p/original" + poster_link : ""
