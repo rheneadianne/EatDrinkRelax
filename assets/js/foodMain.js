@@ -29,19 +29,21 @@ const changeIntolerance = intolerances => {
 const randomFoodAPI = () => {
     $(".foodError").addClass("is-hidden")
     $(".moreInfobtn").removeClass("is-hidden")
+    $(".faveFood").removeClass("is-hidden")
     fetch(foodAPI + foodAPIkey, {
         method: "GET",
         headers: { "Content-type": "application/json" }
     })
-        .then((response) => response.json())
-        .then((data) => {
+        .then(response => response.json())
+        .then(data => {
             let currentRandomRecipe = [data]
+            console.log(data)
             randomFood(data)
             $(".moreInfobtn").click(function () {
                 saveForMoreDetails(currentRandomRecipe)
             })
         })
-        .catch(() => errorMessage())
+        .catch(error => errorMessage(error))
 }
 
 $(".randomize").click(function () {
@@ -53,13 +55,17 @@ const currentMenuStored = JSON.parse(localStorage.getItem("currentMenu"))
 const randomFood = data => {
     foodImg.src = `https://spoonacular.com/recipeImages/${data.recipes[0].id}-556x370.jpg`
     foodTitle.innerHTML = data.recipes[0].title
+    $(".faveFood").click(function () {
+        favToLocal("Meal", data.recipes[0].title, data.recipes[0].sourceURL)
+    })
 }
 
 const saveForMoreDetails = currentRandomRecipe => {
     localStorage.setItem("currentMenu", JSON.stringify(currentRandomRecipe))
 }
 
-const errorMessage = () => {
+const errorMessage = (error) => {
+    console.error(error)
     $(".foodError").removeClass("is-hidden")
     errorPopUp.innerHTML = "Invalid selections! Please note that the API has a limited tagging system. Please try a different combo!"
 }
