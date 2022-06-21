@@ -9,6 +9,7 @@ html {
     background-size: cover;
     font-family: sans-serif;
   }
+  
   #overlay {
     background: rgba(147, 135, 242, 0.9);
     position: fixed;

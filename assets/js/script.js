@@ -157,17 +157,17 @@ function displayMovieInformation(
       </a>`
         document.querySelector(".movieInformation").innerHTML = `
         <button onclick= "favToLocal('Movie', '${title}', 'https://www.imdb.com/title/${imdbID}')" class="button is-fullwidth has-background-warning mb-2"> I'm your favorite! </button>        
-    <div class="chosenMovieInformation columns is-flex is-flex-direction-row is-flex-wrap-wrap is-justify-content-space-evenly">
-    <div class="movieImageContainer column is-6">
+    <div class="chosenMovieInformation columns is-flex is-flex-direction-row is-flex-wrap-wrap">
+    <div class="movieImageContainer column is-two-thirds-fullscreen is-three-fifths-desktop is-full-tablet m-2">
     <img
       src="${poster_link ? "https://image.tmdb.org/t/p/original" + poster_link : ""
             }"
-      class="movieImage"
+      class="movieImage image"
       alt="This is a poster of the currently chosen movie."
     />
   </div>
-  <div class="chosenMovieMoreDetails is-6 panel is-info has-background-light column mt-3">
-  <p class="panel-heading">Movie Info</p>
+  <div class="chosenMovieMoreDetails is-size-7 is-one-third-fullhd is-two-fifths-desktop is-full-tablet panel is-info has-background-light column mt-3 p-0">
+  <p class="panel-heading is-size-7 m-2">Movie Info</p>
     <p class="text panel-block">
     <span class="mr-1">Movie Genre: </span
     >${chosenGenreName}

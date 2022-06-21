@@ -3,6 +3,10 @@
     margin: 0;
 }
 
+.card, .panel {
+  height: 100%;
+}
+
 .foodError {
     position: fixed;
     height:auto;
@@ -20,8 +24,10 @@
   color: black;
 }
 
-.movieImage {
-  width: 280px;
-  height: 460px;
-  border-radius: 15px;
+.has-text-shadow {
+  text-shadow: 0px 0px 3px #4d433d;
+}
+
+.has-text-shadow-less {
+  text-shadow: 0px 0px 1px #4d433d;
 }

@@ -22,6 +22,10 @@ recipeSource.textContent =`Source: ${currentMenuStored[0].recipes[0].sourceName}
 
 let ingredientsShorter = currentMenuStored[0].recipes[0].extendedIngredients
 
+$(".faveFoodSingle").click(function () {
+    favToLocal("Meal", singlePageTitle.innerHTML, recipeSource.href)
+})
+
 // lists all ingredients and measurements
 for (i = 0; i < ingredientsShorter.length; i++) {
     ingredients.innerHTML += `<li>${ingredientsShorter[i].measures.us.amount} ${ingredientsShorter[i].measures.us.unitShort} ${ingredientsShorter[i].originalName}</li>`

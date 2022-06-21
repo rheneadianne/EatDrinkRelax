@@ -44,6 +44,5 @@ function displayCocktail(data) {
     let value = getIngredients[key];
     cocktailIngredients.innerHTML += `<li>${value}</li>`
   }
-
 }
 

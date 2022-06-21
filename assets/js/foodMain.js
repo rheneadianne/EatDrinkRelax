@@ -59,7 +59,7 @@ $(".randomize").click(function () {
 const randomFood = data => {
     foodImg.src = `https://spoonacular.com/recipeImages/${data.recipes[0].id}-556x370.jpg`
     foodTitle.innerHTML = data.recipes[0].title
-    $(".faveFood").click(function () {
+    $(".faveFoodSingle").click(function () {
         favToLocal("Meal", data.recipes[0].title, data.recipes[0].sourceURL)
     })
 }
