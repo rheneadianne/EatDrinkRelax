@@ -152,13 +152,13 @@ function displayMovieInformation(
         });
         //add information like movie name, photo, overview and etc
         console.log(JSON.stringify(localStorage.getItem("imdb_id")));
-        document.querySelector(".movieInformation").innerHTML = `        
-    <div class="chosenMovieInformation">
-      <a href="https://www.imdb.com/title/${imdbID}" target=_blank class="text">
+        document.querySelector(".movieTitle").innerHTML= `<a href="https://www.imdb.com/title/${imdbID}" target=_blank class="text">
         <span
           >Movie Title: </span
         >${title}
-      </a>
+      </a>`
+        document.querySelector(".movieInformation").innerHTML = `        
+    <div class="chosenMovieInformation">
       <button onclick= "favToLocal('Movie', '${title}', 'https://www.imdb.com/title/${imdbID}')"> Im your favorite! </button>
     <div class="movieImageContainer">
     <img
