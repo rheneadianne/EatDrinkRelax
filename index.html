@@ -8,18 +8,19 @@
   <link rel="stylesheet" href="./assets/css/style.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <script src="https://kit.fontawesome.com/7f23a2002a.js" crossorigin="anonymous"></script>
   <title>Eat Drink Relax</title>
 </head>
 
 <body>
   <!-- Header / Jumbotron -->
 
-  <section class="hero is-primary">
-    <div class="hero-body is-size-2 has-text-centered ">
-      <div class="columns">
-        <h1 class="column has-text-weight-bold has-text-shadow">EAT</h1>
-        <h1 class="column  has-text-weight-bold has-text-shadow">DRINK</h1>
-        <h1 class="column has-text-weight-bold has-text-shadow">RELAX</h1>
+  <section class="hero is-primary m-4 p-1">
+    <div class="hero-body is-size-2 has-text-centered has-text-link box p-0 m-6">
+      <div class="columns p-1">
+        <h1 class="column has-text-weight-bold has-text-shadow has-background-primary">EAT<br><i class="fa-solid fa-utensils"></i></h1>
+        <h1 class="column  has-text-weight-bold has-text-shadow has-background-primary">DRINK<br><i class="fa-solid fa-wine-glass"></i></h1>
+        <h1 class="column has-text-weight-bold has-text-shadow has-background-primary">RELAX<br><i class="fa-solid fa-film"></i></h1>
       </div>
     </div>
   </section>
@@ -29,8 +30,7 @@
     <div class="foodError has-background-danger box has-text-white is-hidden"></div>
     <article class="food card column has-background-primary has-text-white m-5 ">
       <div class="card-content">
-        <h2 class="title is-4 foodTitle has-text-centered mb-2 has-text-warning-light has-text-shadow-less">Click below for a
-          random recipe!</h1>
+        <h2 class="title is-4 foodTitle has-text-centered mb-2 has-text-warning-light has-text-shadow-less">Recipe!</h1>
         <div class="select is-fullwidth mb-2">
           <select class="changeRecipeType" onchange="changeMealType(this.options[this.selectedIndex].value)">
             <option value="main%20course">Main Course</option>
@@ -85,56 +85,62 @@
 
 
     <!-- Drink card? Holds the name of the drink, image and a randomize button. -->
-    <article class="column card has-background-primary has-text-white m-5">
+    <article class="column card has-background-primary has-text-link m-5">
       <div class="card-content">
         <h1 class="title is-4 cocktailTitle has-text-centered mb-2 has-text-warning-light has-text-shadow-less">Click below for a random cocktail</h1>
         <button id="drinkButton" class="button is-info is-fullwidth mb-2">Randomize Cocktail</button>
         <div id="cocktailDiv">
           <img class="cocktailImg image"/>
           <ul class="cocktailIngredients"></ul>
-        <div id="overlay"></div>
-      </div>
+          <div id="overlay"></div>
+        </div>
     </article>
 
     <!-- Movie card? Holds the name of the movie, image and a randomize button. -->
 
 
-    <article class="column container card has-background-primary has-text-white m-5">
+    <article class="column container card has-background-primary has-text-link m-5">
       <div class="card-content">
-        <h2 class="title is-4 movieTitle has-text-centered mb-2 has-text-warning-light has-text-shadow-less">Click below for a random movie!</h1>
-        <div class="movieOptions">
-          <div class="option select is-fullwidth mb-2">
-            <!-- <p>GENRE:</p> -->
-            <select class="genreOption">
-              <option value="All">All Genres</option>
-            </select>
+        <h2 class="title is-4 movieTitle has-text-centered mb-2 has-text-warning-light has-text-shadow-less">Movie!</h1>
+          <div class="movieOptions">
+            <div class="option select is-fullwidth mb-2">
+              <!-- <p>GENRE:</p> -->
+              <select class="genreOption">
+                <option value="All">All Genres</option>
+              </select>
+            </div>
+            <div class="option select is-fullwidth mb-2">
+              <!-- <p>YEAR:</p> -->
+              <select class="yearOption">
+                <option value="All">All Years</option>
+              </select>
+            </div>
+            <div class="option select is-fullwidth mb-2">
+              <!-- <p>SORT:</p> -->
+              <select class="sortOption">
+                <option value="popularity.desc&">Most Popular</option>
+                <option value="popularity.asc&">Least Popular</option>
+                <option value="primary_release_date.desc&">Latest</option>
+                <option value="primary_release_date.asc&">Oldest</option>
+                <option value="vote_average.desc&">Top Rated</option>
+                <option value="vote_average.asc&">Least Rated</option>
+              </select>
+            </div>
+            <button type="button" class="button is-info is-fullwidth mb-2 generateMovie">Randomize Movie</button>
+            <div class="movieInformation"></div>
           </div>
-          <div class="option select is-fullwidth mb-2">
-            <!-- <p>YEAR:</p> -->
-            <select class="yearOption">
-              <option value="All">All Years</option>
-            </select>
-          </div>
-          <div class="option select is-fullwidth mb-2">
-            <!-- <p>SORT:</p> -->
-            <select class="sortOption">
-              <option value="popularity.desc&">Most Popular</option>
-              <option value="popularity.asc&">Least Popular</option>
-              <option value="primary_release_date.desc&">Latest</option>
-              <option value="primary_release_date.asc&">Oldest</option>
-              <option value="vote_average.desc&">Top Rated</option>
-              <option value="vote_average.asc&">Least Rated</option>
-            </select>
-          </div>
-          <button type="button" class="button is-info is-fullwidth mb-2 generateMovie">Randomize Movie</button>
-          <div class="movieInformation"></div>
-        </div>
       </div>
     </article>
 
-    <!-- Footer? Do we want a footer? Or just leave it blank? -->
-
   </section>
+
+  <!-- Footer -->
+
+  <footer class="has-background-primary has-text-link">
+    <div class="has-text-centered m-4 p-2">
+      <h1 class="is-size-4 has-text-weight-bold">Favourites</h1>
+    </div>
+  </footer>
 
   <script src="./assets/js/script.js"></script>
   <script src="./assets/js/favorites.js"></script>
