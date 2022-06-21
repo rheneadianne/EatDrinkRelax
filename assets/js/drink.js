@@ -52,4 +52,30 @@ $("#button").click(function(){
 
   }
 
+<<<<<<< HEAD
 
+=======
+  
+
+
+const button = document.querySelector("#button")
+button.addEventListener("click", getDrinkInfo)
+
+
+
+
+function replaceDrinkImg() {
+  const removecocktail = document.querySelector("#cocktail")
+  while (removecocktail.lastChild) {
+    removecocktail.removeChild(removecocktail.lastChild)
+  }
+}
+
+function replaceDrinkInfo() {
+  const removeoverlay = document.querySelector("#overlay")
+  while (removeoverlay.lastChild) {
+    removeoverlay.removeChild(removeoverlay.lastChild)
+  }
+}
+
+>>>>>>> 80f7905e525c151fb485572dc85bae6854308fdc
