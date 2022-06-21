@@ -25,11 +25,11 @@
   </section>
 
   <!-- Nav bar? Holds the randomize all button, and the favorites button (bring to new page) -->
-  <section class="columns m-4">
+  <section class="columns m-3">
     <div class="foodError has-background-danger box has-text-white is-hidden"></div>
     <article class="food card column has-background-primary has-text-white m-5">
       <div class="card-content">
-        <h1 class="title is-4 foodTitle has-text-centered mb-2 has-text-link-light has-text-info-dark">Click below for a
+        <h2 class="title is-4 foodTitle has-text-centered mb-2 has-text-warning-light ">Click below for a
           random recipe!</h1>
         <div class="select is-fullwidth mb-2">
           <select class="changeRecipeType" onchange="changeMealType(this.options[this.selectedIndex].value)">
@@ -79,6 +79,7 @@
         <button type="button" class="randomize button is-info is-fullwidth mb-2">Randomize</button>
         <a href="./singlepage.html" target="_blank" class="is-hidden moreInfobtn is-fullwidth button is-danger mb-2">Learn
           More</a>
+        <button class="button is-hidden faveFood is-fullwidth has-background-warning mb-2"> Im your favorite! </button>
         <img src="" class="foodImg" />
     </article>
 
@@ -86,12 +87,11 @@
     <!-- Drink card? Holds the name of the drink, image and a randomize button. -->
     <article class="column card has-background-primary has-text-white m-5">
       <div class="card-content">
-        <h1>Random Cocktail Generator</h1>
-        <h3>Tired of the same glass of wine or bottle of beer at your virtual happy hour? Click the button below
-          for a new cocktail recipe!</h3>
-        <button id="button">NEW COCKTAIL RECIPE</button>
-        <div id="cocktailDiv"></div>
-        <div id="cocktail"></div>
+        <h1 class="title is-4 cocktailTitle has-text-centered mb-2 has-text-warning-light ">Click below for a random cocktail</h1>
+        <button id="drinkButton" class="button is-info is-fullwidth mb-2">Randomize Cocktail</button>
+        <div id="cocktailDiv">
+          <img class="cocktailImg"/>
+          <ul class="cocktailIngredients"></ul>
         <div id="overlay"></div>
       </div>
     </article>
@@ -101,10 +101,7 @@
 
     <article class="column container card has-background-primary has-text-white m-5">
       <div class="card-content">
-        <h1 class="title is-4 foodTitle has-text-centered mb-2 has-text-link-light has-text-info-dark">Click below
-          for a
-          random movie!</h1>
-        <div class="movieInformation"></div>
+        <h2 class="title is-4 movieTitle has-text-centered mb-2 has-text-warning-light">Click below for a random movie!</h1>
         <div class="movieOptions">
           <div class="option select is-fullwidth mb-2">
             <!-- <p>GENRE:</p> -->
@@ -129,11 +126,8 @@
               <option value="vote_average.asc&">Least Rated</option>
             </select>
           </div>
-          <div class="movieButtons">
-            <button type="button" class="button is-info is-fullwidth mb-2 generateMovie">Randomize
-              Movie</button>
-          </div>
-          
+          <button type="button" class="button is-info is-fullwidth mb-2 generateMovie">Randomize Movie</button>
+          <div class="movieInformation"></div>
         </div>
       </div>
     </article>
