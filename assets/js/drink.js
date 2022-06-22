@@ -2,6 +2,11 @@
   const cocktailIngredients = document.querySelector(".cocktailIngredients")
 
 $("#drinkButton").click(function () {
+  randomDrinks()
+  $(".cocktailIngredientsPanel").removeClass("is-hidden")
+})
+
+function randomDrinks() {
   var element = document.getElementById("favDrinkButton");
   element.classList.remove("is-hidden");
   cocktailIngredients.innerHTML = ""
@@ -18,7 +23,7 @@ $("#drinkButton").click(function () {
       displayCocktail(data)
     })
     .catch((error) => console.error("FETCH ERROR:", error));
-})
+}
 
 //function to display random coctail
 function displayCocktail(data) {
@@ -44,7 +49,7 @@ function displayCocktail(data) {
 
   for (let key in getIngredients) {
     let value = getIngredients[key];
-    cocktailIngredients.innerHTML += `<li>${value}</li>`
+    cocktailIngredients.innerHTML += `<p class="panel-block">${value}</p>`
   }
 }
 

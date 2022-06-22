@@ -14,12 +14,12 @@
 
 <body>
 
-  <section class="hero is-primary m-4 p-1">
-    <div class="hero-body is-size-2 has-text-centered has-text-link box p-0 m-6">
+  <section class="hero is-primary m-4 p-1 box">
+    <div class="hero-body is-size-2 has-text-centered has-text-link p-0 m-6 ">
       <div class="columns p-1">
-        <h1 class="column has-text-weight-bold has-text-shadow has-background-primary">EAT<br><i class="fa-solid fa-utensils"></i></h1>
-        <h1 class="column  has-text-weight-bold has-text-shadow has-background-primary">DRINK<br><i class="fa-solid fa-wine-glass"></i></h1>
-        <h1 class="column has-text-weight-bold has-text-shadow has-background-primary">RELAX<br><i class="fa-solid fa-film"></i></h1>
+        <h1 class="column has-text-weight-bold has-text-light">EAT<br><i class="fa-solid fa-utensils"></i></h1>
+        <h1 class="column has-text-weight-bold has-text-light">DRINK<br><i class="fa-solid fa-wine-glass"></i></h1>
+        <h1 class="column has-text-weight-bold has-text-light">RELAX<br><i class="fa-solid fa-film"></i></h1>
       </div>
     </div>
   </section>
@@ -30,69 +30,71 @@
     <article class="food card column has-background-primary has-text-white m-5 ">
       <div class="card-content">
         <h2 class="title is-4 foodTitle has-text-centered mb-2 has-text-warning-light has-text-shadow-less">Recipe!</h1>
-        <div class="select is-fullwidth mb-2">
-          <select class="changeRecipeType" onchange="changeMealType(this.options[this.selectedIndex].value)">
-            <option value="main%20course">Main Course</option>
-            <option value="side%20dish">Side Dish</option>
-            <option value="dessert">Dessert</option>
-            <option value="appetizer">Appetizer</option>
-            <option value="salad">Salad</option>
-            <option value="bread">Bread</option>
-            <option value="breakfast">Breakfast</option>
-            <option value="soup">Soup</option>
-            <option value="fingerfood">Fingerfood</option>
-            <option value="snack">Snack</option>
-          </select>
-        </div>
-        <div class="select is-fullwidth mb-2">
-          <select class="changeDiet" onchange="changeDiet(this.options[this.selectedIndex].value)">
-            <option value="">No Restrictions</option>
-            <option value="gluten%20free">Gluten Free</option>
-            <option value="ketogenic">ketogenic</option>
-            <option value="vegetarian">Vegetarian</option>
-            <option value="lacto-vegetarian">Lacto-vegetarian</option>
-            <option value="ovo-vegetarian">Ovo-vegetarian</option>
-            <option value="vegan">Vegan</option>
-            <option value="pescetarian">Pescetarian</option>
-            <option value="paleo">Paleo</option>
-            <option value="low%20FODMAP">Low FODMAP</option>
-            <option value="whole30">Whole30</option>
-          </select>
-        </div>
-        <div class="select is-fullwidth mb-2">
-          <select class="changeIntolerance" onchange="changeIntolerance(this.options[this.selectedIndex].value)">
-            <option value="">No Intolerances</option>
-            <option value="dairy">Dairy</option>
-            <option value="egg">egg</option>
-            <option value="gluten">Gluten</option>
-            <option value="grain">Grain</option>
-            <option value="peanut">Peanut</option>
-            <option value="seafood">Seafood</option>
-            <option value="sesame">Sesame</option>
-            <option value="shellfish">Shellfish</option>
-            <option value="soy">Soy</option>
-            <option value="tree%20nut">Tree Nut</option>
-            <option value="wheat">Wheat</option>
-          </select>
-        </div>
-        <button type="button" class="randomize button is-info is-fullwidth mb-2">Randomize</button>
-        <a href="./singlepage.html" target="_blank" class="is-hidden moreInfobtn is-fullwidth button is-danger mb-2">Learn
-          More</a>
-          <button class="button is-hidden faveFood is-fullwidth has-background-warning mb-2" onclick="favToLocal('Meal', document.querySelector('.foodTitle').innerHTML, document.querySelector('.foodTitle').id)"> I'm your favorite! </button>
-        <img src="" class="foodImg image" />
+          <div class="select is-fullwidth mb-2">
+            <select class="changeRecipeType" onchange="changeMealType(this.options[this.selectedIndex].value)">
+              <option value="main%20course">Main Course</option>
+              <option value="side%20dish">Side Dish</option>
+              <option value="dessert">Dessert</option>
+              <option value="appetizer">Appetizer</option>
+              <option value="salad">Salad</option>
+              <option value="bread">Bread</option>
+              <option value="breakfast">Breakfast</option>
+              <option value="soup">Soup</option>
+              <option value="fingerfood">Fingerfood</option>
+              <option value="snack">Snack</option>
+            </select>
+          </div>
+          <div class="select is-fullwidth mb-2">
+            <select class="changeDiet" onchange="changeDiet(this.options[this.selectedIndex].value)">
+              <option value="">No Restrictions</option>
+              <option value="gluten%20free">Gluten Free</option>
+              <option value="ketogenic">ketogenic</option>
+              <option value="vegetarian">Vegetarian</option>
+              <option value="lacto-vegetarian">Lacto-vegetarian</option>
+              <option value="ovo-vegetarian">Ovo-vegetarian</option>
+              <option value="vegan">Vegan</option>
+              <option value="pescetarian">Pescetarian</option>
+              <option value="paleo">Paleo</option>
+              <option value="low%20FODMAP">Low FODMAP</option>
+              <option value="whole30">Whole30</option>
+            </select>
+          </div>
+          <div class="select is-fullwidth mb-2">
+            <select class="changeIntolerance" onchange="changeIntolerance(this.options[this.selectedIndex].value)">
+              <option value="">No Intolerances</option>
+              <option value="dairy">Dairy</option>
+              <option value="egg">egg</option>
+              <option value="gluten">Gluten</option>
+              <option value="grain">Grain</option>
+              <option value="peanut">Peanut</option>
+              <option value="seafood">Seafood</option>
+              <option value="sesame">Sesame</option>
+              <option value="shellfish">Shellfish</option>
+              <option value="soy">Soy</option>
+              <option value="tree%20nut">Tree Nut</option>
+              <option value="wheat">Wheat</option>
+            </select>
+          </div>
+          <button type="button" class="randomize button is-info is-fullwidth mb-2">Randomize Recipe</button>
+          <a href="./singlepage.html" target="_blank"
+            class="is-hidden moreInfobtn is-fullwidth button is-danger mb-2">Learn
+            More</a>
+          <button class="button is-hidden faveFood is-fullwidth has-background-warning mb-2"
+            onclick="favToLocal('Meal', document.querySelector('.foodTitle').innerHTML, document.querySelector('.foodTitle').id)">
+            I'm your favorite! </button>
+          <img src="" class="foodImg image" />
     </article>
 
     <!-- Drink card? Holds the name of the drink, image and a randomize button. -->
     <article class="column card has-background-primary has-text-link m-5">
       <div class="card-content">
-        <h1 class="title is-4 cocktailTitle has-text-centered mb-2 has-text-warning-light has-text-shadow-less">Click below for a random cocktail</h1>
-        
+        <h1 class="title is-4 cocktailTitle has-text-centered mb-2 has-text-warning-light has-text-shadow-less">
+          Cocktail!</h1>
+
         <div id="cocktailDiv">
-          
-   
           <div class="select is-fullwidth mb-2">
             <select id="drink-category-choice">
-              <option>Pick a Category</option>
+              <option>All Categories</option>
               <option>Cocktail</option>
               <option>Milk / Float / Shake</option>
               <option>Coffee / Tea</option>
@@ -111,7 +113,7 @@
           </div>
           <div class="select is-fullwidth mb-2">
             <select id="drink-ingredient-choice">
-              <option>Pick an Ingredient</option>
+              <option>All Ingredients</option>
               <option>Lemon</option>
               <option>Milk</option>
               <option>Coffee</option>
@@ -121,14 +123,24 @@
               <option>Tequila</option>
             </select>
           </div>
-      
+
           <div id="overlay"></div>
           <button id="drinkButton" class="button is-info is-fullwidth mb-2">Randomize Cocktail</button>
-          <button id = "favDrinkButton" class="button is-hidden is-fullwidth has-background-warning mb-2" onclick="favToLocal('Drink', document.querySelector('.cocktailTitle').innerHTML, 'https://www.google.ca/search?q=' + document.querySelector('.cocktailTitle').innerHTML)"> I'm your favorite! </button>
-          <img class="cocktailImg image"/>
-          <ul class="cocktailIngredients"></ul>
+          <button id="favDrinkButton" class="button is-hidden is-fullwidth has-background-warning mb-2"
+            onclick="favToLocal('Drink', document.querySelector('.cocktailTitle').innerHTML, 'https://www.google.ca/search?q=' + document.querySelector('.cocktailTitle').innerHTML)">
+            I'm your favorite! </button>
+          <div class="cocktail columns is-flex is-flex-direction-row is-flex-wrap-wrap mr-1 is-size-7">
+            <div class="cocktailImgContain column is-two-thirds is-size-7">
+              <img class="cocktailImg image"/>
+            </div>
+            <div class="cocktailIngredientsPanel is-hidden panel is-size-7 is-one-third-fullhd is-two-fifths-desktop is-full-tablet panel is-info has-background-light column mt-3 p-0">
+              <div class="panel-heading is-info">Ingredients</div>
+              <div class="cocktailIngredients"></div>
+            </div>
+          </div>
+
         </div>
-        
+
     </article>
 
     <!-- Movie card? Holds the name of the movie, image and a randomize button. -->
@@ -169,9 +181,11 @@
 
   </section>
   <!-- Footer -->
-  <footer class="has-background-primary has-text-link">
-    <div class="has-text-centered m-4 p-2">
-      <a href="./favorite.html" class="is-size-4 has-text-weight-bold">Favourites</a>
+  <footer class="has-background-primary has-text-link box m-4">
+    <div class="has-text-centered p-2">
+      <a href="./favorite.html" class="is-size-4 has-text-weight-bold button is-warning">Favourites</a>
+      <button class="randomAll button is-danger is-size-4 has-text-weight-bold"
+        onclick="randomFoodAPI();generateRandomMovie(); randomDrinks()">Randomize All</button>
     </div>
   </footer>
 
