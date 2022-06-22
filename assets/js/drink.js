@@ -2,6 +2,8 @@
   const cocktailIngredients = document.querySelector(".cocktailIngredients")
 
 $("#drinkButton").click(function () {
+  var element = document.getElementById("favDrinkButton");
+  element.classList.remove("is-hidden");
   cocktailIngredients.innerHTML = ""
   fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php")
     .then((response) => {
