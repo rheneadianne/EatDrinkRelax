@@ -13,22 +13,22 @@ let spoonParams = {
     intolerances: ""
 }
 
-let foodAPI = `https://api.spoonacular.com/recipes/random?tags=`
+let foodAPI = ""
 
 // changes API fetch url depending on selections
 const changeMealType = recipeType => {
     spoonParams.recipeType = recipeType
-    foodAPI = `${foodAPI}${spoonParams.recipeType},${spoonParams.diet},${spoonParams.intolerances}`
+    foodAPI = `https://api.spoonacular.com/recipes/random?tags=${spoonParams.recipeType},${spoonParams.diet},${spoonParams.intolerances}`
 }
 
 const changeDiet = diet => {
     spoonParams.diet = diet
-    foodAPI = `${foodAPI}${spoonParams.recipeType},${spoonParams.diet},${spoonParams.intolerances}`
+    foodAPI = `https://api.spoonacular.com/recipes/random?tags=${spoonParams.recipeType},${spoonParams.diet},${spoonParams.intolerances}`
 }
 
 const changeIntolerance = intolerances => {
     spoonParams.intolerances = intolerances
-    foodAPI = `${foodAPI}${spoonParams.recipeType},${spoonParams.diet},${spoonParams.intolerances}`
+    foodAPI = `https://api.spoonacular.com/recipes/random?tags=${spoonParams.recipeType},${spoonParams.diet},${spoonParams.intolerances}`
 }
 
 // function to call API, show more info button and favourite food button
@@ -43,7 +43,6 @@ const randomFoodAPI = () => {
         .then(response => response.json())
         .then(data => {
             let currentRandomRecipe = [data]
-            console.log(data)
             randomFood(data)
             $(".moreInfobtn").click(function () {
                 saveForMoreDetails(currentRandomRecipe)
