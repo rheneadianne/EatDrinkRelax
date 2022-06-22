@@ -69,9 +69,6 @@ const saveForMoreDetails = currentRandomRecipe => {
     localStorage.setItem("currentMenu", JSON.stringify(currentRandomRecipe))
 }
 
-// gets current menu item from local storage
-const currentMenuStored = JSON.parse(localStorage.getItem("currentMenu"))
-
 // displays error message when invalid selections are displayed
 const errorMessage = (error) => {
     console.error(error)

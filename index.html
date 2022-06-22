@@ -24,9 +24,10 @@
     </div>
   </section>
 
-  <!-- Nav bar? Holds the randomize all button, and the favorites button (bring to new page) -->
   <section class="columns m-3">
     <div class="foodError has-background-danger box has-text-white is-hidden"></div>
+
+    <!-- Food card: Holds the name of the food, image and a randomize button. -->
     <article class="food card column has-background-primary has-text-white m-5 ">
       <div class="card-content">
         <h2 class="title is-4 foodTitle has-text-centered mb-2 has-text-warning-light has-text-shadow-less">Recipe!</h1>
@@ -83,7 +84,7 @@
           <img src="" class="foodImg image" />
     </article>
 
-    <!-- Drink card? Holds the name of the drink, image and a randomize button. -->
+    <!-- Drink card: Holds the name of the drink, image and a randomize button. -->
     <article class="column card has-background-primary has-text-link m-5">
       <div class="card-content">
         <h1 class="title is-4 cocktailTitle has-text-centered mb-2 has-text-warning-light has-text-shadow-less">
@@ -92,10 +93,10 @@
         <div id="cocktailDiv">
           <div class="select is-fullwidth mb-2">
             <select id="drink-category-choice">
-              <option>All Categories</option>
-              <option>Cocktail</option>
-              <option>Milk / Float / Shake</option>
-              <option>Coffee / Tea</option>
+              <option value="">All Categories</option>
+              <option value="c=Cocktail">Cocktail</option>
+              <option value="c=shake">Milk / Float / Shake</option>
+              <option value="c=Coffee%20\/%20Tea">Coffee / Tea</option>
               <option>Punch / Party Drink</option>
               <option>Beer</option>
               <option>Soft Drink / Soda</option>
@@ -124,7 +125,7 @@
 
           <div id="overlay"></div>
           <button id="drinkButton" class="button is-info is-fullwidth mb-2">Randomize Cocktail</button>
-          <a href="./drinkPage.html" target="_blank" class="is-hidden moreDrinkBtn is-fullwidth button is-danger mb-2">Learn More</a>
+          <a href="" target="_blank" class="is-hidden moreDrinkBtn is-fullwidth button is-danger mb-2">Learn More</a>
           <button id="favDrinkButton" class="button is-hidden is-fullwidth has-background-warning mb-2">I'm your favorite! </button>
           <div class="cocktail columns is-flex is-flex-direction-row is-flex-wrap-wrap mr-1 is-size-7">
             <div class="cocktailImgContain column is-two-thirds is-size-7">
@@ -140,9 +141,7 @@
 
     </article>
 
-    <!-- Movie card? Holds the name of the movie, image and a randomize button. -->
-
-
+    <!-- Movie card: Holds the name of the movie, image and a randomize button. -->
     <article class="column container card has-background-primary has-text-link m-5">
       <div class="card-content">
         <h2 class="title is-4 movieTitle has-text-centered mb-2 has-text-warning-light has-text-shadow-less">Movie!</h1>
