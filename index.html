@@ -88,8 +88,8 @@
         <h1 class="title is-4 cocktailTitle has-text-centered mb-2 has-text-warning-light has-text-shadow-less">Click below for a random cocktail</h1>
         
         <div id="cocktailDiv">
-          <img class="cocktailImg image"/>
-          <ul class="cocktailIngredients"></ul>
+          
+   
           <div class="select is-fullwidth mb-2">
             <select id="drink-category-choice">
               <option>Pick a Category</option>
@@ -125,6 +125,8 @@
           <div id="overlay"></div>
           <button id="drinkButton" class="button is-info is-fullwidth mb-2">Randomize Cocktail</button>
           <button id = "favDrinkButton" class="button is-hidden is-fullwidth has-background-warning mb-2" onclick="favToLocal('Drink', document.querySelector('.cocktailTitle').innerHTML, 'https://www.google.ca/search?q=' + document.querySelector('.cocktailTitle').innerHTML)"> I'm your favorite! </button>
+          <img class="cocktailImg image"/>
+          <ul class="cocktailIngredients"></ul>
         </div>
         
     </article>
