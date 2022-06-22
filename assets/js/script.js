@@ -152,37 +152,35 @@ function displayMovieInformation(
         });
         //add information like movie name, photo, overview and etc
         console.log(JSON.stringify(localStorage.getItem("imdb_id")));
-        document.querySelector(".movieTitle").innerHTML= `<a href="https://www.imdb.com/title/${imdbID}" target=_blank class="text">
-        <span
-          >Movie Title: </span
-        >${title}
+        document.querySelector(".movieTitle").innerHTML= `<a href="https://www.imdb.com/title/${imdbID}" target=_blank class="text has-text-warning-light">
+        ${title}
       </a>`
-        document.querySelector(".movieInformation").innerHTML = `        
-    <div class="chosenMovieInformation">
-      <button onclick= "favToLocal('Movie', '${title}', 'https://www.imdb.com/title/${imdbID}')"> Im your favorite! </button>
-    <div class="movieImageContainer">
+        document.querySelector(".movieInformation").innerHTML = `
+        <button onclick= "favToLocal('Movie', '${title}', 'https://www.imdb.com/title/${imdbID}')" class="button is-fullwidth has-background-warning mb-2"> I'm your favorite! </button>        
+    <div class="chosenMovieInformation columns is-flex is-flex-direction-row is-flex-wrap-wrap">
+    <div class="movieImageContainer column is-two-thirds-fullscreen is-three-fifths-desktop is-full-tablet m-2">
     <img
       src="${poster_link ? "https://image.tmdb.org/t/p/original" + poster_link : ""
             }"
-      class="movieImage"
+      class="movieImage image"
       alt="This is a poster of the currently chosen movie."
     />
   </div>
-    <p class="text">
-    <span
-      >Movie Genre: </span
+  <div class="chosenMovieMoreDetails is-size-7 is-one-third-fullhd is-two-fifths-desktop is-full-tablet panel is-info has-background-light column mt-3 p-0">
+  <p class="panel-heading is-size-7 m-2">Movie Info</p>
+    <p class="text panel-block">
+    <span class="mr-1">Movie Genre: </span
     >${chosenGenreName}
   </p>
-    <p class="text">
-    <span
-      >Movie Popularity: </span
+    <p class="text panel-block">
+    <span class="mr-1">Movie Popularity: </span
     >${popularity}
   </p>
-  <p class="text">
-    <span
-      >Release Date: </span
+  <p class="text panel-block">
+    <span class="mr-1">Release Date: </span
     >${release_date}
   </p>
+  </div>
   </div>
 `;
     });
