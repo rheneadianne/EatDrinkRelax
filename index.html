@@ -90,34 +90,38 @@
         <div id="cocktailDiv">
           <img class="cocktailImg image"/>
           <ul class="cocktailIngredients"></ul>
-          <h6>Category</h6>
-          <select id="drink-category-choice">
-            <option>Pick a Category</option>
-            <option>Cocktail</option>
-            <option>Milk / Float / Shake</option>
-            <option>Coffee / Tea</option>
-            <option>Punch / Party Drink</option>
-            <option>Beer</option>
-            <option>Soft Drink / Soda</option>
-          </select>
-          <h6>Alcoholic</h6>
-          <select id="drink-alcohol-choice">
-            <option>Alcoholic/Non-Alcoholic</option>
-            <option>Alcoholic</option>
-            <option>Non alcoholic</option>
-            <option>Optional alcohol</option>
-          </select>
-          <h6>Ingredient</h6>
-          <select id="drink-ingredient-choice">
-            <option>Pick an Ingredient</option>
-            <option>Lemon</option>
-            <option>Milk</option>
-            <option>Coffee</option>
-            <option>Vodka</option>
-            <option>Gin</option>
-            <option>Rum</option>
-            <option>Tequila</option>
-          </select>
+          <div class="select is-fullwidth mb-2">
+            <select id="drink-category-choice">
+              <option>Pick a Category</option>
+              <option>Cocktail</option>
+              <option>Milk / Float / Shake</option>
+              <option>Coffee / Tea</option>
+              <option>Punch / Party Drink</option>
+              <option>Beer</option>
+              <option>Soft Drink / Soda</option>
+            </select>
+          </div>
+          <div class="select is-fullwidth mb-2">
+            <select id="drink-alcohol-choice">
+              <option>Alcoholic/Non-Alcoholic</option>
+              <option>Alcoholic</option>
+              <option>Non alcoholic</option>
+              <option>Optional alcohol</option>
+            </select>
+          </div>
+          <div class="select is-fullwidth mb-2">
+            <select id="drink-ingredient-choice">
+              <option>Pick an Ingredient</option>
+              <option>Lemon</option>
+              <option>Milk</option>
+              <option>Coffee</option>
+              <option>Vodka</option>
+              <option>Gin</option>
+              <option>Rum</option>
+              <option>Tequila</option>
+            </select>
+          </div>
+      
           <div id="overlay"></div>
           <button id="drinkButton" class="button is-info is-fullwidth mb-2">Randomize Cocktail</button>
           <button class="button is-fullwidth has-background-warning mb-2" onclick="favToLocal('Drink', document.querySelector('.cocktailTitle').innerHTML, window.location.hostname)"> I'm your favorite! </button>
