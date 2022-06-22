@@ -51,6 +51,9 @@ function clearList(listToEmpty) {
     }
 };
 
+
+
+
 function displayAllFav() {
     let movieList = document.querySelector(".fav-movie-list");
     let mealList = document.querySelector(".fav-meal-list");
@@ -76,11 +79,23 @@ function displayAllFav() {
             let newListing = document.createElement("a");
             newListing.classList.add("button");
             newListing.classList.add("is-info");
-            newListing.classList.add("is-fullwidth");
+            newListing.classList.add("is-three-quarters");
             newListing.classList.add("mb-2");
             newListing.href = localMovieList[movieIndex].source;
             newListing.innerHTML = localMovieList[movieIndex].title;
+
+            //formating for delete button
+            let delListing = document.createElement("a");
+            delListing.classList.add("delete");
+            delListing.classList.add("is-large");
+            delListing.classList.add("has-text-primary");
+            delListing.classList.add("has-background-primary");
+            delListing.classList.add("ml-1");
+            delListing.classList.add("mt-1");
+            delListing.setAttribute('onclick', "deleteItem('Movie', '" + newListing.innerHTML + "')");
+
             movieList.appendChild(newListing);
+            movieList.appendChild(delListing);
             movieIndex++;
         } while (movieIndex < localMovieList.length);
         movieIndex = 0;
@@ -105,11 +120,23 @@ function displayAllFav() {
             let newListing = document.createElement("a");
             newListing.classList.add("button");
             newListing.classList.add("is-info");
-            newListing.classList.add("is-fullwidth");
+            newListing.classList.add("is-three-quarters");
             newListing.classList.add("mb-2");
             newListing.href = localDrinkList[drinkIndex].source;
             newListing.innerHTML = localDrinkList[drinkIndex].title;
+
+            //formating for delete button
+            let delListing = document.createElement("a");
+            delListing.classList.add("delete");
+            delListing.classList.add("is-large");
+            delListing.classList.add("has-text-primary");
+            delListing.classList.add("has-background-primary");
+            delListing.classList.add("ml-1");
+            delListing.classList.add("mt-1");
+            delListing.setAttribute('onclick', "deleteItem('Drink', '" + newListing.innerHTML + "')");
+
             drinkList.appendChild(newListing);
+            drinkList.appendChild(delListing);
             drinkIndex++;
         } while (drinkIndex < localDrinkList.length);
         drinkIndex = 0;
@@ -134,15 +161,58 @@ function displayAllFav() {
             let newListing = document.createElement("a");
             newListing.classList.add("button");
             newListing.classList.add("is-info");
-            newListing.classList.add("is-fullwidth");
+            newListing.classList.add("is-three-quarters");
             newListing.classList.add("mb-2");
             newListing.href = localMealList[mealIndex].source;
             newListing.innerHTML = localMealList[mealIndex].title;
+
+
+            //formating for delete button
+            let delListing = document.createElement("a");
+            delListing.classList.add("delete");
+            delListing.classList.add("is-large");
+            delListing.classList.add("has-text-primary");
+            delListing.classList.add("has-background-primary");
+            delListing.classList.add("ml-1");
+            delListing.classList.add("mt-1");
+            delListing.setAttribute('onclick', "deleteItem('Meal', '" + newListing.innerHTML + "')");
+
+
             mealList.appendChild(newListing);
+            mealList.appendChild(delListing);
+
             mealIndex++;
         } while (mealIndex < localMealList.length);
         mealIndex = 0;
     }
+}
+
+function deleteItem(category, item) {
+    let localList = JSON.parse(localStorage.getItem("fav" + category));
+    console.log(localList);
+    console.log("To Del: " + item);
+
+    //find index of item
+    let index = 0;
+    for (let i = 0; i < localList.length; i++) {
+        if (localList[i].title.includes(item)) {
+            index = i;
+            break;
+        }
+    }
+
+
+    if (index == 0) {
+        localList.splice(index, 1);
+    } else {
+        localList.splice(index, index);
+    }
+    let newLocal = localList;
+
+    //clear old local host
+    localStorage.removeItem("fav" + category);
+    localStorage.setItem("fav" + category, JSON.stringify(newLocal));
+    window.location.reload();
 }
 
 function clearLocalStorage() {
