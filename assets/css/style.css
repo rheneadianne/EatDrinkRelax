@@ -1,6 +1,17 @@
 * {
     padding: 0;
     margin: 0;
+    
+}
+
+html {
+  background-image: url("../img/memphis-mini\,png");
+  background-position: top right;
+  background-repeat: repeat;
+}
+
+.image {
+  width: auto;
 }
 
 .card, .panel {

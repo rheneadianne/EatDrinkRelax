@@ -23,7 +23,7 @@
 
                     <div class="meal-container">
                         <h2 class="title title-meal">Eat</h2>
-                        <div class="fav-meal-list">
+                        <div class="column fav-meal-list">
 
                         </div>
                     </div>
@@ -32,7 +32,7 @@
         <article class="column has-background-primary has-text-white m-5">
             <div class="drink-container">
                 <h2 class="title title-drinks">Drinks</h2>
-                <div class="fav-drink-list">
+                <div class="column fav-drink-list">
 
                 </div>
             </div>
@@ -41,18 +41,22 @@
         <article class="column has-background-primary has-text-white m-5">
             <div class="movie-container">
                 <h2 class="title title-movie">Movie</h2>
-                <div class="fav-movie-list">
+                <div class="column fav-movie-list">
 
                 </div>
             </div>
         </article>
     </section>
 
+    <div class="has-text-centered m-4 p-2">
+        <p class="button is-info is-size-4 has-text-weight-bold" onclick="clearLocalStorage()">Clear Favorites</p>
+    </div>
+
     <footer class="has-background-primary has-text-link">
         <div class="has-text-centered m-4 p-2">
             <a href="index.html#" class="is-size-4 has-text-weight-bold">Home</a>
         </div>
-    </footer>S
+    </footer>
 
     <script src="assets/js/favorites.js"></script>
 </body>
