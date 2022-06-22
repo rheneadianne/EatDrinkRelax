@@ -65,6 +65,7 @@ function displayAllFav () {
 
     //remove previous list renders
     if (unorderedMovieList.firstChild) {
+        console.log("Cleared Movie");
         clearList(unorderedMovieList);
     }
 
@@ -123,3 +124,5 @@ function displayAllFav () {
     }
     mealList.appendChild(unorderedMealList);
 }
+
+displayAllFav();

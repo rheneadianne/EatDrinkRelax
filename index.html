@@ -12,8 +12,8 @@
 </head>
 
 <body>
-  <!-- Header / Jumbotron -->
 
+  <!-- Header / Jumbotron -->
   <section class="hero is-primary">
     <div class="hero-body is-size-2 has-text-centered ">
       <div class="columns">
@@ -27,72 +27,74 @@
   <!-- Nav bar? Holds the randomize all button, and the favorites button (bring to new page) -->
   <section class="columns m-4">
     <div class="foodError has-background-danger box has-text-white is-hidden"></div>
+
     <article class="food card column has-background-primary has-text-white m-5">
       <div class="card-content">
         <h2 class="title is-4 foodTitle has-text-centered mb-2 has-text-warning-light ">Click below for a
           random recipe!</h1>
-        <div class="select is-fullwidth mb-2">
-          <select class="changeRecipeType" onchange="changeMealType(this.options[this.selectedIndex].value)">
-            <option value="main%20course">Main Course</option>
-            <option value="side%20dish">Side Dish</option>
-            <option value="dessert">Dessert</option>
-            <option value="appetizer">Appetizer</option>
-            <option value="salad">Salad</option>
-            <option value="bread">Bread</option>
-            <option value="breakfast">Breakfast</option>
-            <option value="soup">Soup</option>
-            <option value="fingerfood">Fingerfood</option>
-            <option value="snack">Snack</option>
-          </select>
-        </div>
-        <div class="select is-fullwidth mb-2">
-          <select class="changeDiet" onchange="changeDiet(this.options[this.selectedIndex].value)">
-            <option value="">No Restrictions</option>
-            <option value="gluten%20free">Gluten Free</option>
-            <option value="ketogenic">ketogenic</option>
-            <option value="vegetarian">Vegetarian</option>
-            <option value="lacto-vegetarian">Lacto-vegetarian</option>
-            <option value="ovo-vegetarian">Ovo-vegetarian</option>
-            <option value="vegan">Vegan</option>
-            <option value="pescetarian">Pescetarian</option>
-            <option value="paleo">Paleo</option>
-            <option value="low%20FODMAP">Low FODMAP</option>
-            <option value="whole30">Whole30</option>
-          </select>
-        </div>
-        <div class="select is-fullwidth mb-2">
-          <select class="changeIntolerance" onchange="changeIntolerance(this.options[this.selectedIndex].value)">
-            <option value="">No Intolerances</option>
-            <option value="dairy">Dairy</option>
-            <option value="egg">egg</option>
-            <option value="gluten">Gluten</option>
-            <option value="grain">Grain</option>
-            <option value="peanut">Peanut</option>
-            <option value="seafood">Seafood</option>
-            <option value="sesame">Sesame</option>
-            <option value="shellfish">Shellfish</option>
-            <option value="soy">Soy</option>
-            <option value="tree%20nut">Tree Nut</option>
-            <option value="wheat">Wheat</option>
-          </select>
-        </div>
-        <button type="button" class="randomize button is-info is-fullwidth mb-2">Randomize</button>
-        <a href="./singlepage.html" target="_blank" class="is-hidden moreInfobtn is-fullwidth button is-danger mb-2">Learn
-          More</a>
-        <img src="" class="foodImg" />
+          <div class="select is-fullwidth mb-2">
+            <select class="changeRecipeType" onchange="changeMealType(this.options[this.selectedIndex].value)">
+              <option value="main%20course">Main Course</option>
+              <option value="side%20dish">Side Dish</option>
+              <option value="dessert">Dessert</option>
+              <option value="appetizer">Appetizer</option>
+              <option value="salad">Salad</option>
+              <option value="bread">Bread</option>
+              <option value="breakfast">Breakfast</option>
+              <option value="soup">Soup</option>
+              <option value="fingerfood">Fingerfood</option>
+              <option value="snack">Snack</option>
+            </select>
+          </div>
+          <div class="select is-fullwidth mb-2">
+            <select class="changeDiet" onchange="changeDiet(this.options[this.selectedIndex].value)">
+              <option value="">No Restrictions</option>
+              <option value="gluten%20free">Gluten Free</option>
+              <option value="ketogenic">ketogenic</option>
+              <option value="vegetarian">Vegetarian</option>
+              <option value="lacto-vegetarian">Lacto-vegetarian</option>
+              <option value="ovo-vegetarian">Ovo-vegetarian</option>
+              <option value="vegan">Vegan</option>
+              <option value="pescetarian">Pescetarian</option>
+              <option value="paleo">Paleo</option>
+              <option value="low%20FODMAP">Low FODMAP</option>
+              <option value="whole30">Whole30</option>
+            </select>
+          </div>
+          <div class="select is-fullwidth mb-2">
+            <select class="changeIntolerance" onchange="changeIntolerance(this.options[this.selectedIndex].value)">
+              <option value="">No Intolerances</option>
+              <option value="dairy">Dairy</option>
+              <option value="egg">egg</option>
+              <option value="gluten">Gluten</option>
+              <option value="grain">Grain</option>
+              <option value="peanut">Peanut</option>
+              <option value="seafood">Seafood</option>
+              <option value="sesame">Sesame</option>
+              <option value="shellfish">Shellfish</option>
+              <option value="soy">Soy</option>
+              <option value="tree%20nut">Tree Nut</option>
+              <option value="wheat">Wheat</option>
+            </select>
+          </div>
+          <button type="button" class="randomize button is-info is-fullwidth mb-2">Randomize</button>
+          <a href="./singlepage.html" target="_blank"
+            class="is-hidden moreInfobtn is-fullwidth button is-danger mb-2">Learn
+            More</a>
+          <img src="" class="foodImg" />
     </article>
-
 
     <!-- Drink card? Holds the name of the drink, image and a randomize button. -->
     <article class="column card has-background-primary has-text-white m-5">
       <div class="card-content">
-        <h1 class="title is-4 cocktailTitle has-text-centered mb-2 has-text-warning-light ">Click below for a random cocktail</h1>
+        <h1 class="title is-4 cocktailTitle has-text-centered mb-2 has-text-warning-light ">Click below for a random
+          cocktail</h1>
         <button id="drinkButton" class="button is-info is-fullwidth mb-2">Randomize Cocktail</button>
         <div id="cocktailDiv">
-          <img class="cocktailImg"/>
+          <img class="cocktailImg" />
           <ul class="cocktailIngredients"></ul>
-        <div id="overlay"></div>
-      </div>
+          <div id="overlay"></div>
+        </div>
     </article>
 
     <!-- Movie card? Holds the name of the movie, image and a randomize button. -->
@@ -100,40 +102,45 @@
 
     <article class="column container card has-background-primary has-text-white m-5">
       <div class="card-content">
-        <h2 class="title is-4 movieTitle has-text-centered mb-2 has-text-warning-light">Click below for a random movie!</h1>
-        <div class="movieOptions">
-          <div class="option select is-fullwidth mb-2">
-            <!-- <p>GENRE:</p> -->
-            <select class="genreOption">
-              <option value="All">All Genres</option>
-            </select>
+        <h2 class="title is-4 movieTitle has-text-centered mb-2 has-text-warning-light">Click below for a random movie!
+          </h1>
+          <div class="movieOptions">
+            <div class="option select is-fullwidth mb-2">
+              <!-- <p>GENRE:</p> -->
+              <select class="genreOption">
+                <option value="All">All Genres</option>
+              </select>
+            </div>
+            <div class="option select is-fullwidth mb-2">
+              <!-- <p>YEAR:</p> -->
+              <select class="yearOption">
+                <option value="All">All Years</option>
+              </select>
+            </div>
+            <div class="option select is-fullwidth mb-2">
+              <!-- <p>SORT:</p> -->
+              <select class="sortOption">
+                <option value="popularity.desc&">Most Popular</option>
+                <option value="popularity.asc&">Least Popular</option>
+                <option value="primary_release_date.desc&">Latest</option>
+                <option value="primary_release_date.asc&">Oldest</option>
+                <option value="vote_average.desc&">Top Rated</option>
+                <option value="vote_average.asc&">Least Rated</option>
+              </select>
+            </div>
+            <button type="button" class="button is-info is-fullwidth mb-2 generateMovie">Randomize Movie</button>
+            <div class="movieInformation"></div>
           </div>
-          <div class="option select is-fullwidth mb-2">
-            <!-- <p>YEAR:</p> -->
-            <select class="yearOption">
-              <option value="All">All Years</option>
-            </select>
-          </div>
-          <div class="option select is-fullwidth mb-2">
-            <!-- <p>SORT:</p> -->
-            <select class="sortOption">
-              <option value="popularity.desc&">Most Popular</option>
-              <option value="popularity.asc&">Least Popular</option>
-              <option value="primary_release_date.desc&">Latest</option>
-              <option value="primary_release_date.asc&">Oldest</option>
-              <option value="vote_average.desc&">Top Rated</option>
-              <option value="vote_average.asc&">Least Rated</option>
-            </select>
-          </div>
-          <button type="button" class="button is-info is-fullwidth mb-2 generateMovie">Randomize Movie</button>
-          <div class="movieInformation"></div>
-        </div>
       </div>
     </article>
 
     <!-- Footer? Do we want a footer? Or just leave it blank? -->
 
   </section>
+  <div class="columns is-centered">
+    <div class="column is-narrow"></div>
+    <a href="./favorite.html#" class="button is-info">Favorites</a> 
+  </div>
 
   <script src="./assets/js/script.js"></script>
   <script src="./assets/js/favorites.js"></script>
