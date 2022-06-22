@@ -3,10 +3,14 @@
 
 $("#drinkButton").click(function () {
   randomDrinks()
-  $(".cocktailIngredientsPanel").removeClass("is-hidden")
+})
+
+$("#favDrinkButton").click(function () {
+  favToLocal('Drink', document.querySelector('.cocktailTitle').innerHTML, `https://www.google.ca/search?q=${document.querySelector('.cocktailTitle').innerHTML} cocktail`)
 })
 
 function randomDrinks() {
+  $(".cocktailIngredientsPanel").removeClass("is-hidden")
   var element = document.getElementById("favDrinkButton");
   element.classList.remove("is-hidden");
   cocktailIngredients.innerHTML = ""
