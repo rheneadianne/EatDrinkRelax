@@ -2,66 +2,57 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"/>
     <title>Favorites</title>
 </head>
 
 <body>
-    <section class="hero is-info">
-        <div class="hero-body">
-            <p class="title">
-                Your Favorites!
-            </p>
-        </div>
-    </section>
+        <section class="hero is-info m-2 p-1 box">
+            <div class="hero-body">
+                <p class="title">
+                    Your Favorites!
+                </p>
+            </div>
+        </section>
 
-    <section class="columns mb-6">
-        <article class="column has-background-primary has-text-white m-5 box">
+        <section class="columns m-0">
+            <article class="column has-background-primary has-text-white m-4 box">
+                <div class="meal-container">
+                    <h2 class="title title-meal has-text-white">Eat</h2>
+                    <div class="fav-meal-list list m-3"></div>
+                </div>
+            </article>
 
-                    <div class="meal-container">
-                        <h2 class="title title-meal has-text-white">Eat</h2>
-                        <div class="column fav-meal-list">
-
-                        </div>
-                    </div>
-        </article>
-
-        <article class="column has-background-primary has-text-white m-5 box">
-            <div class="drink-container">
+            <article class="column has-background-primary has-text-white m-4 box">
                 <h2 class="title title-drinks has-text-white">Drinks</h2>
-                <div class="column fav-drink-list">
-
+                <div class="drink-container ">
+                    <div class="fav-drink-list list m-3"></div>
                 </div>
-            </div>
-        </article>
+            </article>
 
-        <article class="column has-background-primary has-text-white m-5 box">
-            <div class="movie-container">
-                <h2 class="title title-movie has-text-white">Movie</h2>
-                <div class="column fav-movie-list">
-
+            <article class="column has-background-primary has-text-white m-4 box">
+                <div class="movie-container">
+                    <h2 class="title title-movie has-text-white">Movie</h2>
+                    <div class="fav-movie-list list m-3"></div>
                 </div>
-            </div>
-        </article>
-    </section>
+            </article>
+        </section>
 
-    <div class="has-text-centered m-4 p-2">
-        <p class="button is-info is-size-4 has-text-weight-bold" onclick="clearLocalStorage()">Clear Favorites</p>
-    </div>
-
-    <footer class="has-background-primary has-text-link">
         <div class="has-text-centered m-4 p-2">
-            <a href="index.html#" class="is-size-4 has-text-weight-bold">Home</a>
+            <p class="button is-info is-size-4 has-text-weight-bold" onclick="clearLocalStorage()">Clear Favorites</p>
         </div>
-    </footer>
 
+        <footer class="has-background-primary has-text-link m-4 p-2">
+            <div class="has-text-centered ">
+                <a href="index.html#" class="is-size-4 has-text-weight-bold button is-link m-3 p-2">Home</a>
+            </div>
+        </footer>
     <script src="assets/js/favorites.js"></script>
-</body>
 
-</html>
 </body>
 
 </html>
