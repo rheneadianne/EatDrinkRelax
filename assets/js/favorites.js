@@ -69,23 +69,22 @@ function displayAllFav() {
         clearList(movieList);
     }
     let movieIndex = 0;
-    do {
-        //create element to be apppended
-        console.log("Movie Loop Initiated");
-        let newListing = document.createElement("a");
-        newListing.classList.add("button");
-        newListing.classList.add("is-info");
-        newListing.classList.add("is-fullwidth");
-        newListing.classList.add("mb-2");
-        newListing.href = localMovieList[movieIndex].source;
-
-        newListing.innerHTML = localMovieList[movieIndex].title;
-        movieList.appendChild(newListing);
-        movieIndex++;
-    } while (movieIndex < localMovieList.length);
-
- 
-
+    if (localMovieList[movieIndex]) {
+        do {
+            //create element to be apppended
+            console.log("Movie Loop Initiated");
+            let newListing = document.createElement("a");
+            newListing.classList.add("button");
+            newListing.classList.add("is-info");
+            newListing.classList.add("is-fullwidth");
+            newListing.classList.add("mb-2");
+            newListing.href = localMovieList[movieIndex].source;
+            newListing.innerHTML = localMovieList[movieIndex].title;
+            movieList.appendChild(newListing);
+            movieIndex++;
+        } while (movieIndex < localMovieList.length);
+        movieIndex = 0;
+    }
 
     //display all drinks
     let localDrinkList = retFromLocal("Drink"); //retrieve favorite movie list from local storage
@@ -112,16 +111,27 @@ function displayAllFav() {
     let unorderedMealList = document.createElement("ul");
     unorderedMealList.classList.add("unordered-meal-list");
 
-    for (let i = 0; i < localMealList.length; i++) {
-        //create element to be apppended
-        console.log("Meal Loop Initiated");
-        let newListing = document.createElement("li");
-        newListing.classList.add("meal-title");
-        newListing.innerHTML = localMealList[i].title;
-
-        unorderedMealList.appendChild(newListing);
+    if (unorderedMovieList.firstChild) {
+        console.log("Cleared Movie");
+        clearList(mealList);
     }
-    mealList.appendChild(unorderedMealList);
+    let mealIndex = 0;
+    if (localMealList[mealIndex]) {
+        do {
+            //create element to be apppended
+            console.log("Meal Loop Initiated");
+            let newListing = document.createElement("a");
+            newListing.classList.add("button");
+            newListing.classList.add("is-info");
+            newListing.classList.add("is-fullwidth");
+            newListing.classList.add("mb-2");
+            newListing.href = localMealList[mealIndex].source;
+            newListing.innerHTML = localMealList[mealIndex].title;
+            mealList.appendChild(newListing);
+            mealIndex++;
+        } while (mealIndex < localMealList.length);
+        mealIndex = 0;
+    }
 }
 
 //don't run unless you are on the favorites page
