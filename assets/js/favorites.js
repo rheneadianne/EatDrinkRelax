@@ -6,13 +6,13 @@ function favToLocal(category, itemName, source) {
 
     let favObj = {
         title: itemName,
-        source 
+        source
     }
 
     let favList = []; //to store a list of favorite items
 
     //check if local storage contains a list of favorite items
-    if (localStorage.getItem("fav" + category)) { 
+    if (localStorage.getItem("fav" + category)) {
         //save the list of movies found in local storage
         favList = JSON.parse(localStorage.getItem("fav" + category));
         console.log("Local Storage: ", favList);
@@ -25,7 +25,7 @@ function favToLocal(category, itemName, source) {
     localStorage.setItem("fav" + category, JSON.stringify(favList));
 }
 
-function retFromLocal (category) {
+function retFromLocal(category) {
     console.log(category);
 
     let favList = []; //to store a list of favorite items
@@ -40,7 +40,7 @@ function retFromLocal (category) {
 }
 
 //to clear out a list when new items are added to local storage and list needs to be rerendered
-function clearList (listToEmpty) {
+function clearList(listToEmpty) {
     console.log(listToEmpty);
 
     if (listToEmpty) {
@@ -51,8 +51,8 @@ function clearList (listToEmpty) {
     }
 };
 
-function displayAllFav () {
-    let movieList =  document.querySelector(".fav-movie-list");
+function displayAllFav() {
+    let movieList = document.querySelector(".fav-movie-list");
     let mealList = document.querySelector(".fav-meal-list");
     let drinkList = document.querySelector(".fav-drink-list");
 
@@ -66,18 +66,25 @@ function displayAllFav () {
     //remove previous list renders
     if (unorderedMovieList.firstChild) {
         console.log("Cleared Movie");
-        clearList(unorderedMovieList);
+        clearList(movieList);
     }
-
-    for (let i = 0; i < localMovieList.length; i++) {
+    let movieIndex = 0;
+    do {
         //create element to be apppended
-        let newListing = document.createElement("li");
-        newListing.classList.add("movie-title");
-        newListing.innerHTML = localMovieList[i].title; 
+        console.log("Movie Loop Initiated");
+        let newListing = document.createElement("a");
+        newListing.classList.add("button");
+        newListing.classList.add("is-info");
+        newListing.classList.add("is-fullwidth");
+        newListing.classList.add("mb-2");
+        newListing.href = localMovieList[movieIndex].source;
 
-        unorderedMovieList.appendChild(newListing);
-    }
-    movieList.appendChild(unorderedMovieList);
+        newListing.innerHTML = localMovieList[movieIndex].title;
+        movieList.appendChild(newListing);
+        movieIndex++;
+    } while (movieIndex < localMovieList.length);
+
+ 
 
 
     //display all drinks
@@ -87,16 +94,12 @@ function displayAllFav () {
     let unorderedDrinkList = document.createElement("ul");
     unorderedDrinkList.classList.add("unordered-drink-list");
 
-    //remove previous list renders
-    if (unorderedMovieList.firstChild) {
-        clearList(unorderedMovieList);
-    }
-
     for (let i = 0; i < localDrinkList.length; i++) {
         //create element to be apppended
+        console.log("Drink Loop Initiated");
         let newListing = document.createElement("li");
         newListing.classList.add("drink-title");
-        newListing.innerHTML = localDrinkList[i].title; 
+        newListing.innerHTML = localDrinkList[i].title;
 
         unorderedDrinkList.appendChild(newListing);
     }
@@ -109,20 +112,19 @@ function displayAllFav () {
     let unorderedMealList = document.createElement("ul");
     unorderedMealList.classList.add("unordered-meal-list");
 
-    //remove previous list renders
-    if (unorderedMealList.firstChild) {
-        clearList(unorderedMealList);
-    }
-
     for (let i = 0; i < localMealList.length; i++) {
         //create element to be apppended
+        console.log("Meal Loop Initiated");
         let newListing = document.createElement("li");
         newListing.classList.add("meal-title");
-        newListing.innerHTML = localMealList[i].title; 
+        newListing.innerHTML = localMealList[i].title;
 
         unorderedMealList.appendChild(newListing);
     }
     mealList.appendChild(unorderedMealList);
 }
 
-displayAllFav();
+//don't run unless you are on the favorites page
+if (window.location.href == "file:///Users/robpduo/Documents/SCS%20Bootcamp/EatDrinkRelax/favorite.html") {
+    displayAllFav();
+}
