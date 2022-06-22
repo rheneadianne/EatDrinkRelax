@@ -4,6 +4,8 @@ const foodTitle = document.querySelector(".foodTitle")
 const foodImg = document.querySelector(".foodImg")
 const errorPopUp = document.querySelector(".foodError")
 
+let idToFoodTitle = document.querySelector(".foodTitle"); //used to retrieve source information from index.html
+
 // created object item to filter when fetching api
 let spoonParams = {
     recipeType: "main%20course",
@@ -46,6 +48,8 @@ const randomFoodAPI = () => {
             $(".moreInfobtn").click(function () {
                 saveForMoreDetails(currentRandomRecipe)
             })
+
+            idToFoodTitle.id = data.recipes[0].sourceUrl;
         })
         .catch(error => errorMessage(error))
 }

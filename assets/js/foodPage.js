@@ -8,6 +8,8 @@ const ingredients = document.querySelector(".ingredients")
 const foodNutrition = document.querySelector(".foodNutrition")
 const currentFoodImg = document.querySelector(".currentFoodImg")
 
+
+
 // changes title to current food item
 singlePageTitle.innerHTML = currentMenuStored[0].recipes[0].title
 
@@ -19,6 +21,7 @@ $(".close").click(function(){
 // adds button for recipe source
 recipeSource.href = currentMenuStored[0].recipes[0].sourceUrl
 recipeSource.textContent =`Source: ${currentMenuStored[0].recipes[0].sourceName}`
+console.log(recipeSource.textContent);
 
 let ingredientsShorter = currentMenuStored[0].recipes[0].extendedIngredients
 
