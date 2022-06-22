@@ -33,7 +33,7 @@ The Cocktail DB API
 
 
 ## Favorites
-
+![image](https://user-images.githubusercontent.com/103614767/175048951-46b20fc5-fa5a-41d2-a445-4c205a4ad857.png)
 
 ## Website
 
