@@ -77,7 +77,7 @@ function displayAllFav() {
             //create element to be apppended
             console.log("Movie Loop Initiated");
             let newListing = document.createElement("a");
-            newListing.classList.add("button");
+            newListing.classList.add("button");  
             newListing.classList.add("is-info");
             newListing.classList.add("is-three-quarters");
             newListing.classList.add("mb-2");
@@ -95,8 +95,15 @@ function displayAllFav() {
             delListing.classList.add("mt-1");
             delListing.setAttribute('onclick', "deleteItem('Movie', '" + newListing.innerHTML + "')");
 
-            movieList.appendChild(newListing);
-            movieList.appendChild(delListing);
+            // create list element
+            let newListItem = document.createElement("div");
+            newListItem.classList.add("list-item");
+            newListItem.classList.add("columns");
+            
+            newListItem.appendChild(newListing)
+            newListItem.appendChild(delListing)
+
+            movieList.appendChild(newListItem);
             movieIndex++;
         } while (movieIndex < localMovieList.length);
         movieIndex = 0;
@@ -137,8 +144,13 @@ function displayAllFav() {
             delListing.classList.add("mt-1");
             delListing.setAttribute('onclick', "deleteItem('Drink', '" + newListing.innerHTML + "')");
 
-            drinkList.appendChild(newListing);
-            drinkList.appendChild(delListing);
+            let newListItem = document.createElement("div");
+            newListItem.classList.add("list-item");
+            newListItem.classList.add("columns");
+            newListItem.appendChild(newListing)
+            newListItem.appendChild(delListing)
+
+            drinkList.appendChild(newListItem);
             drinkIndex++;
         } while (drinkIndex < localDrinkList.length);
         drinkIndex = 0;
@@ -181,8 +193,13 @@ function displayAllFav() {
             delListing.setAttribute('onclick', "deleteItem('Meal', '" + newListing.innerHTML + "')");
 
 
-            mealList.appendChild(newListing);
-            mealList.appendChild(delListing);
+            let newListItem = document.createElement("div");
+            newListItem.classList.add("list-item");
+            newListItem.classList.add("columns");
+            newListItem.appendChild(newListing)
+            newListItem.appendChild(delListing)
+;
+            mealList.appendChild(newListItem);
 
             mealIndex++;
         } while (mealIndex < localMealList.length);

@@ -1,7 +1,6 @@
 * {
     padding: 0;
     margin: 0;
-    
 }
 
 html {
@@ -16,6 +15,10 @@ html {
 
 .card, .panel {
   height: 100%;
+}
+
+.box {
+  width: 100%;
 }
 
 .foodError {

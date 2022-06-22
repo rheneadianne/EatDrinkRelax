@@ -59,6 +59,7 @@ async function getMoviesList(movieGenre, movieYear, movieSort, page = 1) {
 //Function for generating the random movie
 function generateRandomMovie() {
     let randomMovieIndex;
+    $(".moreMoviebtn").removeClass("is-hidden")
     // First request to figure out how many options per page
     getMoviesList(movieGenre.value, movieYear.value, movieSorting.value).then(
         (value) => {
@@ -156,6 +157,7 @@ function displayMovieInformation(
         ${title}
       </a>`
         document.querySelector(".movieInformation").innerHTML = `
+        <a href='https://www.imdb.com/title/${imdbID}' target="_blank" class='moreMoviebtn is-fullwidth button is-danger mb-2'>Learn More</a>
         <button onclick= "favToLocal('Movie', '${title}', 'https://www.imdb.com/title/${imdbID}')" class="button is-fullwidth has-background-warning mb-2"> I'm your favorite! </button>        
     <div class="chosenMovieInformation columns is-flex is-flex-direction-row is-flex-wrap-wrap">
     <div class="movieImageContainer column is-two-thirds-fullscreen is-three-fifths-desktop is-full-tablet m-2">

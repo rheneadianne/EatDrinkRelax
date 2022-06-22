@@ -62,9 +62,6 @@ $(".randomize").click(function () {
 const randomFood = data => {
     foodImg.src = `https://spoonacular.com/recipeImages/${data.recipes[0].id}-556x370.jpg`
     foodTitle.innerHTML = data.recipes[0].title
-    $(".faveFoodSingle").click(function () {
-        favToLocal("Meal", data.recipes[0].title, data.recipes[0].sourceURL)
-    })
 }
 
 // saves current recipe to local storage to parse onto seperate HTML page
