@@ -11,10 +11,11 @@ $("#favDrinkButton").click(function () {
 
 function randomDrinks() {
   $(".cocktailIngredientsPanel").removeClass("is-hidden")
+  $(".moreDrinkBtn").removeClass("is-hidden")
   var element = document.getElementById("favDrinkButton");
   element.classList.remove("is-hidden");
   cocktailIngredients.innerHTML = ""
-  fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php")
+  fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php?")
     .then((response) => {
       if (response.ok) {
         return response.json();
@@ -23,8 +24,11 @@ function randomDrinks() {
       }
     })
     .then(data => {
-      console.log(data);
       displayCocktail(data)
+      let storedCocktail = [data]
+      $(".moreDrinkBtn").click(function () {
+        saveStored(storedCocktail)
+    })
     })
     .catch((error) => console.error("FETCH ERROR:", error));
 }
@@ -35,6 +39,8 @@ function displayCocktail(data) {
   const cocktailName = cocktail.strDrink;
   const heading = document.querySelector(".cocktailTitle");
   heading.innerHTML = cocktailName;
+  const cocktailLink = document.querySelector(".moreDrinkBtn");
+  cocktailLink.href = `https://www.google.ca/search?q=${document.querySelector('.cocktailTitle').innerHTML} cocktail`
   //pulls up image of the random cocktail
   const cocktailImg = document.querySelector(".cocktailImg")
   cocktailImg.src = cocktail.strDrinkThumb;
@@ -57,3 +63,7 @@ function displayCocktail(data) {
   }
 }
 
+// saves current cocktail to local storage to parse onto seperate HTML page
+const saveStored = storedCocktail => {
+  localStorage.setItem("currentCocktail", JSON.stringify(storedCocktail))
+}
