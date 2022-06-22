@@ -145,6 +145,11 @@ function displayAllFav() {
     }
 }
 
+function clearLocalStorage() {
+    localStorage.clear();
+    window.location.reload();
+}
+
 //don't run unless you are on the favorites page i.e. if the url contains index.html
 if (!window.location.href.includes("index.html")) {
     displayAllFav();
