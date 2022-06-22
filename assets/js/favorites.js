@@ -89,7 +89,7 @@ function displayAllFav() {
             delListing.classList.add("delete");
             delListing.classList.add("is-large");
             delListing.classList.add("has-text-primary");
-            delListing.classList.add("has-background-primary");
+            delListing.classList.add("has-background-info");
             delListing.classList.add("ml-1");
             delListing.classList.add("mt-1");
             delListing.setAttribute('onclick', "deleteItem('Movie', '" + newListing.innerHTML + "')");
@@ -130,7 +130,7 @@ function displayAllFav() {
             delListing.classList.add("delete");
             delListing.classList.add("is-large");
             delListing.classList.add("has-text-primary");
-            delListing.classList.add("has-background-primary");
+            delListing.classList.add("has-background-info");
             delListing.classList.add("ml-1");
             delListing.classList.add("mt-1");
             delListing.setAttribute('onclick', "deleteItem('Drink', '" + newListing.innerHTML + "')");
@@ -172,7 +172,7 @@ function displayAllFav() {
             delListing.classList.add("delete");
             delListing.classList.add("is-large");
             delListing.classList.add("has-text-primary");
-            delListing.classList.add("has-background-primary");
+            delListing.classList.add("has-background-info");
             delListing.classList.add("ml-1");
             delListing.classList.add("mt-1");
             delListing.setAttribute('onclick', "deleteItem('Meal', '" + newListing.innerHTML + "')");
