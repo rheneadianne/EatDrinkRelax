@@ -82,6 +82,7 @@ function displayAllFav() {
             newListing.classList.add("is-three-quarters");
             newListing.classList.add("mb-2");
             newListing.href = localMovieList[movieIndex].source;
+            newListing.target = "_blank";
             newListing.innerHTML = localMovieList[movieIndex].title;
 
             //formating for delete button
@@ -122,6 +123,7 @@ function displayAllFav() {
             newListing.classList.add("is-info");
             newListing.classList.add("is-three-quarters");
             newListing.classList.add("mb-2");
+            newListing.target = "_blank";
             newListing.href = localDrinkList[drinkIndex].source;
             newListing.innerHTML = localDrinkList[drinkIndex].title;
 
@@ -163,6 +165,7 @@ function displayAllFav() {
             newListing.classList.add("is-info");
             newListing.classList.add("is-three-quarters");
             newListing.classList.add("mb-2");
+            newListing.target = "_blank";
             newListing.href = localMealList[mealIndex].source;
             newListing.innerHTML = localMealList[mealIndex].title;
 
