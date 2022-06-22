@@ -86,7 +86,7 @@
     <article class="column card has-background-primary has-text-link m-5">
       <div class="card-content">
         <h1 class="title is-4 cocktailTitle has-text-centered mb-2 has-text-warning-light has-text-shadow-less">Click below for a random cocktail</h1>
-        <button id="drinkButton" class="button is-info is-fullwidth mb-2">Randomize Cocktail</button>
+        
         <div id="cocktailDiv">
           <img class="cocktailImg image"/>
           <ul class="cocktailIngredients"></ul>
@@ -119,7 +119,10 @@
             <option>Tequila</option>
           </select>
           <div id="overlay"></div>
+          <button id="drinkButton" class="button is-info is-fullwidth mb-2">Randomize Cocktail</button>
+          <button class="button is-fullwidth has-background-warning mb-2" onclick="favToLocal('Drink', document.querySelector('.cocktailTitle').innerHTML, window.location.hostname)"> I'm your favorite! </button>
         </div>
+        
     </article>
 
     <!-- Movie card? Holds the name of the movie, image and a randomize button. -->
