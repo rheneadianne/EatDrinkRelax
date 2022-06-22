@@ -13,7 +13,7 @@ let spoonParams = {
     intolerances: ""
 }
 
-let foodAPI = ""
+let foodAPI = "https://api.spoonacular.com/recipes/random?tags="
 
 // changes API fetch url depending on selections
 const changeMealType = recipeType => {
