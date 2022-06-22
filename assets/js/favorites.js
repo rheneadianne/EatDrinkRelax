@@ -146,6 +146,6 @@ function displayAllFav() {
 }
 
 //don't run unless you are on the favorites page
-if (window.location.href == "file:///Users/robpduo/Documents/SCS%20Bootcamp/EatDrinkRelax/favorite.html") {
+if (!window.location.href.includes("index.html")) {
     displayAllFav();
 }
